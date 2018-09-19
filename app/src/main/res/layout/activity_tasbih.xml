@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.TasbihActivity">
+
+    <com.blackgoblin.rtltoolbar.RtlToolbar
+        android:id="@+id/toolbar_tasbih"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="15dp" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?attr/actionBarSize">
+
+        <LinearLayout
+            android:id="@+id/top_linear"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="15dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/tasbih_allaho_akbar"
+                android:textSize="22sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/tasbih_alhamdo_lellah"
+                android:textSize="22sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/tasbih_sobhan_allah"
+                android:textSize="22sp" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="45dp">
+
+            <TextView
+                android:id="@+id/top_text_allaho"
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+
+                android:text="0"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/top_text_alhamdo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="0"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/top_text_sobhan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="0"
+                android:textSize="22sp" />
+
+        </LinearLayout>
+
+        <devlight.io.library.ArcProgressStackView
+            android:id="@+id/apsv_tasbih"
+            android:layout_width="320dp"
+            android:layout_height="320dp"
+            android:layout_gravity="center"
+            app:apsv_animated="true"
+            app:apsv_dragged="false"
+            app:apsv_draw_width="45%"
+            app:apsv_indicator_orientation="horizontal"
+            app:apsv_leveled="false"
+            app:apsv_model_bg_enabled="true"
+            app:apsv_model_offset="0dp"
+            app:apsv_preview_colors="@array/polluted_waves"
+            app:apsv_rounded="true"
+            app:apsv_shadowed="false"
+            app:apsv_start_angle="270"
+            app:apsv_sweep_angle="360"
+            app:apsv_text_color="#00000000" />
+
+        <Button
+            android:id="@+id/btn_tasbih_counter"
+            style="@style/Base.DialogWindowTitleBackground.AppCompat"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_gravity="center"
+            android:text="@string/tasbih_btn_counter"
+            android:textStyle="bold"
+            android:textSize="30sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="35dp">
+
+            <Button
+                android:id="@+id/btn_tasbih_volume"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+
+                android:text="@string/tasbih_btn_volume_on"
+                tools:ignore="ButtonStyle" />
+
+            <Button
+                android:id="@+id/btn_tasbih_refresh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/tasbih_btn_refresh"
+                tools:ignore="ButtonStyle" />
+
+            <Button
+                android:id="@+id/btn_tasbih_mines"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/tasbih_btn_mines"
+                tools:ignore="ButtonStyle" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</android.support.constraint.ConstraintLayout>

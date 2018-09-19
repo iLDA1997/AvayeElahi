@@ -1,0 +1,182 @@
+<resources>
+    <string name="app_name">AvayeElahi</string>
+    <string name="app_name_fa">آوای الهی</string>
+    <string name="app_version">1.0.0</string>
+    <string name="app_Description">توضیحات</string>
+
+    <!--Alert Dialog Strings-->
+    <string name="dialog_message">آیا برای خروج از برنامه اطمینان دارید؟</string>
+    <string name="dialog_yes">بله</string>
+    <string name="dialog_no">خیر</string>
+    <string name="dialog_comment">ثبت نظر</string>
+
+    <!--CompassActivity-->
+    <string name="compass_top_text">دستگاه شما فاقد قطب نما می باشد!</string>
+    <string name="compass_bottom_back">بازگشت</string>
+    <string name="compass_bottom_guidance">راهنما</string>
+    <string name="DirEast">East</string>
+    <string name="DirWest">West</string>
+    <string name="DirNorth">North</string>
+    <string name="DirSouth">South</string>
+    <string name="DirNorthEast">Northeast</string>
+    <string name="DirNorthNorthEast">North-Northeast</string>
+    <string name="DirEastNorthEast">East-Northeast</string>
+    <string name="DirSouthEast">Southeast</string>
+    <string name="DirEastSouthEast">East-Southeast</string>
+    <string name="DirSouthSouthEast">South-Southeat</string>
+    <string name="DirSouthWest">Southwest</string>
+    <string name="DirSouthSouthWest">South-Southwest</string>
+    <string name="DirWestSouthWest">West-Southwest</string>
+    <string name="DirNorthwest">Northwest</string>
+    <string name="DirWestNorthWest">West-Northwest</string>
+    <string name="DirNorthNorthWest">North-Northwest</string>
+
+    <!--Menu Strings-->
+    <string name="menu_home">صفحه اصلی</string>
+    <string name="menu_asma_khoda">اسماء خدا</string>
+    <string name="menu_azkar_rouzaneh">اذکار روزانه</string>
+    <string name="menu_jabeh_abzar">جعبه ابزاراسلامی</string>
+    <string name="menu_tasbih">تسبیح</string>
+    <string name="menu_zekr_shomar">ذکر شمار</string>
+    <string name="menu_compass">قبله نما</string>
+    <string name="menu_settings">تنظیمات</string>
+    <string name="menu_change_date">تبدیل تاریخ ها</string>
+    <string name="menu_send_program">ارسال برنامه</string>
+    <string name="menu_about_us">درباره ما</string>
+
+    <!--TasbihActivity-->
+    <string name="tasbih_btn_counter">0</string>
+    <string name="tasbih_btn_volume_on">🔊</string>
+    <string name="tasbih_btn_volume_off">🔈</string>
+    <string name="tasbih_btn_refresh">🔄</string>
+    <string name="tasbih_btn_mines">↩</string>
+    <string name="tasbih_sobhan_allah">سبحان الله</string>
+    <string name="tasbih_alhamdo_lellah">الحمدلله</string>
+    <string name="tasbih_allaho_akbar">الله اکبر</string>
+
+    <!--ZekrShomarActivity-->
+    <string name="zekr_top_text">  تا ذکر شمرده اید.</string>
+    <string name="zekr_btn_counter">0</string>
+    <string name="zekr_btn_volume_on">🔊</string>
+    <string name="zekr_btn_volume_off">🔈</string>
+    <string name="zekr_btn_refresh">🔄</string>
+    <string name="zekr_btn_mines">↩</string>
+
+    <!--ChangeDateActivity-->
+    <string name="year">سال</string>
+    <string name="mount">ماه</string>
+    <string name="day">روز</string>
+    <string name="select_year">گزینش سال</string>
+    <string name="select_mount">گزینش ماه</string>
+    <string name="select_day">گزینش روز</string>
+    <string name="date_exception">تاریخ وارد شده اشتباه است!</string>
+    <string name="select_type_date">گزینش گونهٔ تاریخ</string>
+
+    <!--HolidaysActivity-->
+    <string name="holidays">تعطیلات سال            Holidays</string>
+
+    <!--َAsmaAllahActivity-->
+    <string name="asma_allah">اسماء الله</string>
+
+    <!--َAzkarRouzanehActivity-->
+
+    <string name="azkar_rouzaneh_shanbeh">ذکر روز شنبه</string>
+    <string name="azkar_rouzaneh_yek_shanbeh">ذکر روز یکشنبه</string>
+    <string name="azkar_rouzaneh_doshanbeh">ذکر روز دوشنبه</string>
+    <string name="azkar_rouzaneh_se_shanbeh">ذکر روز سه شنبه</string>
+    <string name="azkar_rouzaneh_chahar_shanbeh">ذکر روز چهارشنبه</string>
+    <string name="azkar_rouzaneh_panj_shanbeh">ذکر روز پنجشنبه</string>
+    <string name="azkar_rouzaneh_jomee">ذکر روز جمعه</string>
+
+    <string name="azkar_rouzaneh_doa_shanbeh">بر دعاجق</string>
+    <string name="azkar_rouzaneh_doa_yek_shanbeh">بر دعاجق</string>
+    <string name="azkar_rouzaneh_doa_doshanbeh">بر دعاجق</string>
+    <string name="azkar_rouzaneh_doa_se_shanbeh">بر دعاجق</string>
+    <string name="azkar_rouzaneh_doa_chahar_shanbeh">بر دعاجق</string>
+    <string name="azkar_rouzaneh_doa_panj_shanbeh">بر دعاجق</string>
+    <string name="azkar_rouzaneh_doa_jomee">بر دعاجق</string>
+
+    <!--َAboutUsActivity-->
+    <string name="about_us_bottum_message">امیدواریم با نظرات و پیشنهادات خود ما را در خدمت رسانی بهتر یاری نمایید.</string>
+    <string name="about_us_description">نauyfdauiyfdouasyfdoasyfdoausyfdasdasچ</string>
+    <string name="about_us_telegram">تلگرام برنامه</string>
+    <string name="about_us_email">ایمیل برنامه</string>
+    <string name="about_us_nazar">امتیاز به برنامه</string>
+    <string name="about_us_toast_telegram">تلگرام وجود ندارد!</string>
+    <string name="about_us_email_chooser">Choose Mail App</string>
+    <string name="about_us_email_subject">انتقاد یا پیشنهاد به برنامه</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Strings related to Settings -->
+
+    <!-- Example General settings -->
+    <string name="pref_header_general">General</string>
+
+    <string name="pref_title_social_recommendations">Enable social recommendations</string>
+    <string name="pref_description_social_recommendations">Recommendations for people to contact
+        based on your message history
+    </string>
+
+    <string name="pref_title_display_name">Display name</string>
+    <string name="pref_default_display_name">John Smith</string>
+
+    <string name="pref_title_add_friends_to_messages">Add friends to messages</string>
+    <string-array name="pref_example_list_titles">
+        <item>Always</item>
+        <item>When possible</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_example_list_values">
+        <item>1</item>
+        <item>0</item>
+        <item>-1</item>
+    </string-array>
+
+    <!-- Example settings for Data & Sync -->
+    <string name="pref_header_data_sync">Data &amp; sync</string>
+
+    <string name="pref_title_sync_frequency">Sync frequency</string>
+    <string-array name="pref_sync_frequency_titles">
+        <item>15 minutes</item>
+        <item>30 minutes</item>
+        <item>1 hour</item>
+        <item>3 hours</item>
+        <item>6 hours</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_sync_frequency_values">
+        <item>15</item>
+        <item>30</item>
+        <item>60</item>
+        <item>180</item>
+        <item>360</item>
+        <item>-1</item>
+    </string-array>
+
+    <string-array name="list_preference_entries">
+        <item>Entry 1</item>
+        <item>Entry 2</item>
+        <item>Entry 3</item>
+    </string-array>
+
+    <string-array name="list_preference_entry_values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+    <string-array name="multi_select_list_preference_default_value" />
+
+    <string name="pref_title_system_sync_settings">System sync settings</string>
+
+    <!-- Example settings for Notifications -->
+    <string name="pref_header_notifications">Notifications</string>
+
+    <string name="pref_title_new_message_notifications">New message notifications</string>
+
+    <string name="pref_title_ringtone">Ringtone</string>
+    <string name="pref_ringtone_silent">Silent</string>
+
+    <string name="pref_title_vibrate">Vibrate</string>
+
+</resources>
