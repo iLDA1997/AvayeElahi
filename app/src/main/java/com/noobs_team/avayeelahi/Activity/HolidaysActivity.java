@@ -29,89 +29,8 @@ public class HolidaysActivity extends AppCompatActivity {
 
     private void prepareData() {
         holidays.add(new HolidayList ("1","2","3","4","5"));
-        holidays.add(new HolidayList ("1","2","3","4","5"));
-        holidays.add(new HolidayList ("1","2","3","4","5"));
-        holidays.add(new HolidayList ("1","2","3","4","5"));
-        holidays.add(new HolidayList ("1","2","3","4","5"));
-        holidays.add(new HolidayList ("1","2","3","4","5"));
-        holidays.add(new HolidayList ("1","2","3","4","5"));
-        holidays.add(new HolidayList ("1","2","3","4","5"));
-        holidays.add(new HolidayList ("1","2","3","4","5"));
-        holidays.add(new HolidayList ("1","2","3","4","5"));
-        holidays.add(new HolidayList ("1","2","3","4","5"));
-        holidays.add(new HolidayList ("1","2","3","4","5"));
-        holidays.add(new HolidayList ("1","2","3","4","5"));
-        holidays.add(new HolidayList ("1","2","3","4","5"));
-        holidays.add(new HolidayList ("1","2","3","4","5"));
-        holidays.add(new HolidayList ("1","2","3","4","5"));
-        holidays.add(new HolidayList ("1","2","3","4","5"));
-        holidays.add(new HolidayList ("1","2","3","4","5"));
-        holidays.add(new HolidayList ("1","2","3","4","5"));
-        holidays.add(new HolidayList ("1","2","3","4","5"));
-        holidays.add(new HolidayList ("1","2","3","4","5"));
-        holidays.add(new HolidayList ("1","2","3","4","5"));
-        holidays.add(new HolidayList ("1","2","3","4","5"));
-        holidays.add(new HolidayList ("1","2","3","4","5"));
-        holidays.add(new HolidayList ("1","2","3","4","5"));
-        holidays.add(new HolidayList ("1","2","3","4","5"));
-        holidays.add(new HolidayList ("1","2","3","4","5"));
-        holidays.add(new HolidayList ("1","2","3","4","5"));
-        holidays.add(new HolidayList ("1","2","3","4","5"));
-        holidays.add(new HolidayList ("1","2","3","4","5"));
-        holidays.add(new HolidayList ("1","2","3","4","5"));
-        holidays.add(new HolidayList ("1","2","3","4","5"));
-        holidays.add(new HolidayList ("1","2","3","4","5"));
-        holidays.add(new HolidayList ("1","2","3","4","5"));
-        holidays.add(new HolidayList ("1","2","3","4","5"));
-        holidays.add(new HolidayList ("1","2","3","4","5"));
-        holidays.add(new HolidayList ("1","2","3","4","5"));
-        holidays.add(new HolidayList ("1","2","3","4","5"));
-        holidays.add(new HolidayList ("1","2","3","4","5"));
-        holidays.add(new HolidayList ("1","2","3","4","5"));
-        holidays.add(new HolidayList ("1","2","3","4","5"));
-        holidays.add(new HolidayList ("1","2","3","4","5"));
-        holidays.add(new HolidayList ("1","2","3","4","5"));
-        holidays.add(new HolidayList ("1","2","3","4","5"));
-        holidays.add(new HolidayList ("1","2","3","4","5"));
-        holidays.add(new HolidayList ("1","2","3","4","5"));
-        holidays.add(new HolidayList ("1","2","3","4","5"));
-        holidays.add(new HolidayList ("1","2","3","4","5"));
-        holidays.add(new HolidayList ("1","2","3","4","5"));
-        holidays.add(new HolidayList ("1","2","3","4","5"));
-        holidays.add(new HolidayList ("1","2","3","4","5"));
-        holidays.add(new HolidayList ("1","2","3","4","5"));
-        holidays.add(new HolidayList ("1","2","3","4","5"));
-        holidays.add(new HolidayList ("1","2","3","4","5"));
-        holidays.add(new HolidayList ("1","2","3","4","5"));
-        holidays.add(new HolidayList ("1","2","3","4","5"));
-        holidays.add(new HolidayList ("1","2","3","4","5"));
-        holidays.add(new HolidayList ("1","2","3","4","5"));
-        holidays.add(new HolidayList ("1","2","3","4","5"));
-        holidays.add(new HolidayList ("1","2","3","4","5"));
-        holidays.add(new HolidayList ("1","2","3","4","5"));
-        holidays.add(new HolidayList ("1","2","3","4","5"));
-        holidays.add(new HolidayList ("1","2","3","4","5"));
-        holidays.add(new HolidayList ("1","2","3","4","5"));
-        holidays.add(new HolidayList ("1","2","3","4","5"));
-        holidays.add(new HolidayList ("1","2","3","4","5"));
-        holidays.add(new HolidayList ("1","2","3","4","5"));
-        holidays.add(new HolidayList ("1","2","3","4","5"));
-        holidays.add(new HolidayList ("1","2","3","4","5"));
-        holidays.add(new HolidayList ("1","2","3","4","5"));
-        holidays.add(new HolidayList ("1","2","3","4","5"));
-        holidays.add(new HolidayList ("1","2","3","4","5"));
         holidays.add(new HolidayList ("شنبه","تعطیل","1397/02/30","2018/08/08","1432/05/25"));
-        holidays.add(new HolidayList ("یکشنبه","عید سعید فطر، رحلت امام (رره)، روز جهانی درخت کاری ، روز من","3","4","5"));
         holidays.add(new HolidayList ("1","2","3","4","5"));
-        holidays.add(new HolidayList ("1","2","3","4","5"));
-        holidays.add(new HolidayList ("1","2","3","4","5"));
-
-
-
-
-
-
-
 
     }
 
