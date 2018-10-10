@@ -4,6 +4,29 @@
     <string name="app_version">1.0.0</string>
     <string name="app_Description">توضیحات</string>
 
+    <!--Days of week-->
+    <string name="shanbeh">شنبه</string>
+    <string name="yek_shanbeh">یکشنبه</string>
+    <string name="do_shanbeh">دوشنبه</string>
+    <string name="se_shanbeh">سه شنبه</string>
+    <string name="chahar_shanbeh">چهارشنبه</string>
+    <string name="panj_shanbeh">پنجشنبه</string>
+    <string name="jomee">جمعه</string>
+
+    <!--manths of year-->
+    <string name="farvardin">فروردین</string>
+    <string name="ordibehesht">اردیبهشت</string>
+    <string name="khordad">خرداد</string>
+    <string name="tir">تیر</string>
+    <string name="mordad">مرداد</string>
+    <string name="shahrivar">شهریور</string>
+    <string name="mehr">مهر</string>
+    <string name="aban">آبان</string>
+    <string name="azar">آذر</string>
+    <string name="dey">دی</string>
+    <string name="bahman">بهمن</string>
+    <string name="esfand">اسفند</string>
+
     <!--Alert Dialog Strings-->
     <string name="dialog_message">آیا برای خروج از برنامه اطمینان دارید؟</string>
     <string name="dialog_yes">بله</string>
@@ -106,5 +129,9 @@
     <string name="about_us_email_chooser">Choose Mail App</string>
     <string name="about_us_email_subject">انتقاد یا پیشنهاد به برنامه</string>
     <string name="title_activity_settings">Settings</string>
+
+    <!--َCalendarActivity-->
+    <string name="calendar_top_today_text">امروز</string>
+
 
 </resources>

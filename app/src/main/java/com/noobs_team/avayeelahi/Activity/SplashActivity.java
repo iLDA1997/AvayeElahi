@@ -20,7 +20,7 @@ public class SplashActivity extends Activity implements Animation.AnimationListe
         setContentView(R.layout.activity_splash);
 
         // load the animation
-        animFadeIn = AnimationUtils.loadAnimation(getApplicationContext(), R.animator.animation_fade);
+        animFadeIn = AnimationUtils.loadAnimation(getApplicationContext(), R.animator.animation_fade_out);
         // set animation listener
         animFadeIn.setAnimationListener(this);
         // animation for image
