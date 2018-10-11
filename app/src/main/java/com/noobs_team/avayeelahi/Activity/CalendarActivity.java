@@ -1,35 +1,37 @@
 package com.noobs_team.avayeelahi.Activity;
 
+import android.annotation.SuppressLint;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.noobs_team.avayeelahi.R;
 
 import ir.mirrajabi.persiancalendar.PersianCalendarView;
 import ir.mirrajabi.persiancalendar.core.PersianCalendarHandler;
-import ir.mirrajabi.persiancalendar.core.interfaces.OnDayClickedListener;
-import ir.mirrajabi.persiancalendar.core.interfaces.OnMonthChangedListener;
-import ir.mirrajabi.persiancalendar.core.models.CalendarEvent;
 import ir.mirrajabi.persiancalendar.core.models.PersianDate;
 
 public class CalendarActivity extends AppCompatActivity {
 
-    LinearLayout comeBackCalendar;
+    ImageView calendarComeBack;
     PersianCalendarHandler calendar;
     PersianDate today;
     PersianCalendarView persianCalendarView;
+    Button calendarMahanehButton;
+    Button calendarRouzanehButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calendar);
 
-        comeBackCalendar = findViewById(R.id.come_back_calendar);
+        calendarComeBack = findViewById(R.id.calendar_come_back);
+        calendarMahanehButton =findViewById(R.id.calendar_top_button_mahaneh);
+        calendarRouzanehButton =findViewById(R.id.calendar_top_button_rouzaneh);
 
         persianCalendarView  = (PersianCalendarView)findViewById(R.id.persian_calendar);
         calendar = persianCalendarView.getCalendar();
@@ -72,15 +74,22 @@ public class CalendarActivity extends AppCompatActivity {
         calendar.setColorBackground(getResources().getColor(android.R.color.holo_blue_dark));
         persianCalendarView.update();*/
 
-        comeBackCalendar.setOnClickListener(clickListener);
+        calendarComeBack.setOnClickListener(clickListener);
+        calendarRouzanehButton.setOnClickListener(clickListener);
     }
 
     private View.OnClickListener clickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            if (v.getId() == R.id.come_back_calendar){
+            if (v.getId() == R.id.calendar_come_back){
                 calendar.getToday();
                 persianCalendarView.update();
+            }
+            if (v.getId() == R.id.calendar_top_button_mahaneh){
+
+            }
+            if (v.getId() == R.id.calendar_top_button_rouzaneh){
+
             }
 
         }

@@ -12,33 +12,75 @@
         android:id="@+id/toolbar_calendar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
-        android:elevation="15dp">
+        android:background="?attr/colorPrimary">
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <LinearLayout
-                android:id="@+id/come_back_calendar"
+                android:id="@+id/button_panel"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginRight="5dp"
-                android:layout_alignParentRight="true"
-                android:orientation="vertical">
+                android:gravity="center">
 
-                <ImageView
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
-                    android:src="@drawable/come_back" />
+                <Button
+                    android:id="@+id/calendar_top_button_rouzaneh"
+                    android:layout_width="70dp"
+                    android:layout_height="40dp"
+                    android:text="@string/calendar_top_button_rouzaneh_text" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/calendar_top_today_text" />
+                <Button
+                    android:id="@+id/calendar_top_button_mahaneh"
+                    android:layout_width="70dp"
+                    android:layout_height="40dp"
+                    android:backgroundTint="@color/calendarTopButton"
+                    android:text="@string/calendar_top_button_mahaneh_text" />
+
             </LinearLayout>
 
-        </RelativeLayout>
+            <LinearLayout
+                android:id="@+id/date_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="50"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/calendar_number_of_year"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1397" />
+
+                <TextView
+                    android:id="@+id/calendar_name_of_month"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="مهر" />
+
+                <TextView
+                    android:id="@+id/calendar_number_of_day"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="18" />
+
+                <TextView
+                    android:id="@+id/calendar_name_of_week"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" چهارشنبه" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/calendar_come_back"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/come_back" />
+
+
+        </LinearLayout>
     </com.blackgoblin.rtltoolbar.RtlToolbar>
 
     <ir.mirrajabi.persiancalendar.PersianCalendarView

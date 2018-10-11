@@ -3,12 +3,15 @@
     <color name="colorPrimary">#0eb901</color>
     <color name="colorPrimaryDark">#006d04</color>
     <color name="colorAccent">#000000</color>
+
     <color name="menuBackground">#F5F5F5</color>
     <color name="activitySplashAccent">#ffffff</color>
     <color name="colorBackgroundSplash">#ff076800</color>
+
     <color name="textPrimary">#000000</color>
     <color name="textColor">#000000</color>
     <color name="textTitleColor">#ffffff</color>
+
     <color name="gheblehNamaBackground">#FF009A45</color>
     <color name="menuSelectedColor">#FF83CEC6</color>
 
@@ -19,6 +22,9 @@
     <color name="bg_group_item_normal_pressed_state">#ff99cc99</color>
     <color name="expandable_item_indicator_color">#42000000</color>
     <color name="bg_swipe_item_neutral">@android:color/transparent</color>
+
+    <color name="calendarTopButton">#76FF03</color>
+    <color name="calendarTopDefaultButton">#d6d7d7</color>
 
 
     <!--reds-->
