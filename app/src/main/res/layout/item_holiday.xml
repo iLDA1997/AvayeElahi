@@ -15,20 +15,20 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/holiday_day_of_week"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="روز هفته"
-                android:textSize="25sp" />
-
-            <TextView
+                android:gravity="center"
                 android:id="@+id/holiday_subject"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="عید قربان"
-                android:layout_weight="1"
-                android:textSize="25sp" />
+                android:maxLines="1"
+                android:layout_weight="1" />
+
+            <TextView
+                android:gravity="center"
+                android:id="@+id/holiday_day_of_week"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="روز هفته" />
 
         </LinearLayout>
 
@@ -38,28 +38,28 @@
             android:layout_height="match_parent">
 
             <TextView
+                android:gravity="center"
                 android:id="@+id/holiday_miladi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="میلادی"
-                android:textSize="25sp" />
+                android:text="میلادی" />
 
             <TextView
+                android:gravity="center"
                 android:id="@+id/holiday_ghamari"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="قمری"
-                android:textSize="25sp" />
+                android:text="قمری" />
 
             <TextView
+                android:gravity="center"
                 android:id="@+id/holiday_shamsi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="شمسی"
-                android:textSize="25sp" />
+                android:text="شمسی" />
 
         </LinearLayout>
 

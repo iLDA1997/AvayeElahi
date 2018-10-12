@@ -50,7 +50,7 @@
                     android:id="@+id/calendar_number_of_year"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="1397" />
+                    android:text="1398" />
 
                 <TextView
                     android:id="@+id/calendar_name_of_month"
@@ -83,19 +83,37 @@
         </LinearLayout>
     </com.blackgoblin.rtltoolbar.RtlToolbar>
 
-    <ir.mirrajabi.persiancalendar.PersianCalendarView
-        android:id="@+id/persian_calendar"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="290dp"
-        android:layout_below="@id/persian_calendar"
-        app:pcv_colorBackground="#59b033"
-        app:pcv_colorDayName="#00650b"
-        app:pcv_colorHoliday="#ff0e06"
-        app:pcv_colorHolidaySelected="#f1f2f3"
-        app:pcv_colorNormalDay="#1d1d1d"
-        app:pcv_colorNormalDaySelected="#f6f6f6"
-        app:pcv_eventUnderlineColor="#0dff00"
-        app:pcv_fontSize="15sp"
-        app:pcv_headersFontSize="15sp" />
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            />
+
+        <ir.mirrajabi.persiancalendar.PersianCalendarView
+            android:id="@+id/persian_calendar"
+            android:layout_width="match_parent"
+            android:layout_height="290dp"
+            android:layout_below="@id/persian_calendar"
+            app:pcv_colorBackground="#59b033"
+            app:pcv_colorDayName="#00650b"
+            app:pcv_colorHoliday="#ff0e06"
+            app:pcv_colorHolidaySelected="#f1f2f3"
+            app:pcv_colorNormalDay="#1d1d1d"
+            app:pcv_colorNormalDaySelected="#f6f6f6"
+            app:pcv_eventUnderlineColor="#0dff00"
+            app:pcv_fontSize="15sp"
+            app:pcv_headersFontSize="15sp"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
 
 </LinearLayout>
