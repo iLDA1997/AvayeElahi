@@ -26,6 +26,7 @@ public class AsmaAllahActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_asma_allah);
         toolbarAsmaAllah = findViewById(R.id.toolbar_asma_allah);
+        toolbarAsmaAllah.setTitle(R.string.app_activity_asma_allah);
         setSupportActionBar(toolbarAsmaAllah);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbarAsmaAllah.setTitleTextColor(getResources().getColor(R.color.textTitleColor));

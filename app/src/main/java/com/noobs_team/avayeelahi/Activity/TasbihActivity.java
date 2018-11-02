@@ -46,8 +46,10 @@ public class TasbihActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tasbih);
         toolbarTasbih = findViewById(R.id.toolbar_tasbih);
+        toolbarTasbih.setTitle(R.string.app_activity_tasbih);
         setSupportActionBar(toolbarTasbih);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbarTasbih.setTitleTextColor(getResources().getColor(R.color.textTitleColor));
 
         topTextAllaho = findViewById(R.id.top_text_allaho);
         topTextAlhamdo = findViewById(R.id.top_text_alhamdo);

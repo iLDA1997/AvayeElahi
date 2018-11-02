@@ -14,13 +14,20 @@ import java.util.List;
 public class HolidaysActivity extends AppCompatActivity {
 
     ListView holidayListView;
-
+    android.support.v7.widget.Toolbar toolbarHoliday;
     List<HolidayList> holidays;
     HolidayAdapter adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_holidays);
+
+        toolbarHoliday = findViewById(R.id.toolbar_holiday);
+        toolbarHoliday.setTitle(R.string.app_activity_holidays);
+        setSupportActionBar(toolbarHoliday);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
         holidayListView = (ListView) findViewById(R.id.holiday_list);
         holidays = new ArrayList<>();
         prepareData();

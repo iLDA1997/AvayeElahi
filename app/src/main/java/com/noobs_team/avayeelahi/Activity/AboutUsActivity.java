@@ -27,9 +27,12 @@ public class AboutUsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about_us);
         toolbarAboutUs = findViewById(R.id.toolbar_about_us);
+        toolbarAboutUs.setTitle(R.string.app_activity_about_us);
         setSupportActionBar(toolbarAboutUs);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbarAboutUs.setTitleTextColor(getResources().getColor(R.color.textTitleColor));
+
+
 
         layoutTelegram = findViewById(R.id.about_us_telegram_layout);
         layoutEmail = findViewById(R.id.about_us_email_layout);

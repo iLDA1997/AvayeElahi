@@ -7,20 +7,13 @@
     android:orientation="vertical"
     tools:context=".Activity.HolidaysActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:textSize="25sp"
-        android:layout_gravity="center"
-
-        android:text="@string/holidays" />
-
-    <ImageView
+    <com.blackgoblin.rtltoolbar.RtlToolbar
+        android:id="@+id/toolbar_holiday"
         android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:layout_marginTop="15dp"
-        app:srcCompat="@drawable/divider" />
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="15dp" />
+    
 
     <ListView
         android:id="@+id/holiday_list"

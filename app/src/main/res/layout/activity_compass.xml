@@ -5,15 +5,31 @@
     android:background="@color/gheblehNamaBackground"
     android:gravity="top"
     android:orientation="horizontal"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+
     tools:context="com.noobs_team.avayeelahi.Activity.CompassActivity" >
+
+    <com.blackgoblin.rtltoolbar.RtlToolbar
+        android:id="@+id/toolbar_compass"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="15dp" >
+
+        <Button
+            android:id="@+id/guidanceCompass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/compass_bottom_guidance"
+            android:textColor="@color/textColor"
+            android:textSize="16sp"
+            android:backgroundTint="@color/calendarTopButton"/>
+
+    </com.blackgoblin.rtltoolbar.RtlToolbar>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@id/toolbar_compass"
         android:orientation="vertical">
 
         <LinearLayout
@@ -95,32 +111,5 @@
         android:foregroundGravity="center"
         android:src="@drawable/dial" />
 
-    <Button
-
-        android:id="@+id/backCompass"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginRight="25dp"
-        android:text="@string/compass_bottom_back"
-        android:textColor="@color/textColor"
-        android:textSize="16sp"
-        style="@style/Base.DialogWindowTitleBackground.AppCompat"/>
-
-    <Button
-
-        android:id="@+id/guidanceCompass"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="25dp"
-        android:layout_centerHorizontal="true"
-        android:text="@string/compass_bottom_guidance"
-        android:textColor="@color/textColor"
-        android:textSize="16sp"
-        style="@style/Base.DialogWindowTitleBackground.AppCompat"/>
 
 </RelativeLayout>

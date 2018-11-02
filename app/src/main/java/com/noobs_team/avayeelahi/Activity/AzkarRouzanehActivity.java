@@ -29,6 +29,7 @@ public class AzkarRouzanehActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_azkar_rouzaneh);
         toolbarAzkarRouzaneh = findViewById(R.id.toolbar_azkar_rouzaneh);
+        toolbarAzkarRouzaneh.setTitle(R.string.app_activity_azkar_rouzaneh);
         setSupportActionBar(toolbarAzkarRouzaneh);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbarAzkarRouzaneh.setTitleTextColor(getResources().getColor(R.color.textTitleColor));

@@ -2,7 +2,20 @@
     <string name="app_name">AvayeElahi</string>
     <string name="app_name_fa">آوای الهی</string>
     <string name="app_version">1.0.0</string>
+
+    <!--Activity Names-->
     <string name="app_Description">توضیحات</string>
+    <string name="app_activity_about_us">درباره ما</string>
+    <string name="app_activity_tasbih">تسبیح</string>
+    <string name="app_activity_zekr_shomar">ذکر شمار</string>
+    <string name="app_activity_azkar_rouzaneh">اذکار روزانه</string>
+    <string name="app_activity_compass">قبله نما</string>
+    <string name="app_activity_change_date">تبدیل تاریخ</string>
+    <string name="app_activity_settings">تنظیمات</string>
+    <string name="app_activity_calendar">تقویم</string>
+    <string name="app_activity_holidays">تعطیلات سال</string>
+    <string name="app_activity_asma_allah">اسماء خدا</string>
+    <string name="app_activity_guide_compass">راهنمای قبله نما</string>
 
     <!--Days of week-->
     <string name="shanbeh">شنبه</string>
@@ -87,7 +100,7 @@
 
     <!--ChangeDateActivity-->
     <string name="year">سال</string>
-    <string name="mount">ماه</string>
+    <string name="month">ماه</string>
     <string name="day">روز</string>
     <string name="select_year">گزینش سال</string>
     <string name="select_mount">گزینش ماه</string>
