@@ -14,8 +14,11 @@ import android.view.animation.RotateAnimation;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.noobs_team.avayeelahi.R;
+
+import static com.noobs_team.avayeelahi.R.string.compass_top_text;
 
 public class CompassActivity extends AppCompatActivity implements SensorEventListener {
     private ImageView compassImage;
@@ -25,7 +28,7 @@ public class CompassActivity extends AppCompatActivity implements SensorEventLis
     private TextView degree;
     private SensorManager directionSensor;
     private float currentDegree = 0f;
-    private TextView noCompass;
+
     android.support.v7.widget.Toolbar toolbarCompass;
 
     @Override
@@ -39,7 +42,6 @@ public class CompassActivity extends AppCompatActivity implements SensorEventLis
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbarCompass.setTitleTextColor(getResources().getColor(R.color.textTitleColor));
 
-        noCompass = findViewById(R.id.noCompass);
         poleDirection = findViewById(R.id.poleDirection);
         degree = findViewById(R.id.degree);
         //Setting compass image
@@ -50,6 +52,9 @@ public class CompassActivity extends AppCompatActivity implements SensorEventLis
         degreeVeiw = (TextView) findViewById(R.id.degreeView);
         //allows Sensor manager to the sensor service
         directionSensor = (SensorManager) getSystemService(SENSOR_SERVICE);
+
+        degreeVeiw.setText("");
+        poleView.setText("");
 
         Button guidanceText = findViewById(R.id.guidanceCompass);
         guidanceText.setOnClickListener(compassClick);
@@ -65,9 +70,7 @@ public class CompassActivity extends AppCompatActivity implements SensorEventLis
                     SensorManager.SENSOR_DELAY_GAME);
         } else {
             // fail! we dont have an accelerometer!
-            degree.setVisibility(View.INVISIBLE);
-            poleDirection.setVisibility(View.INVISIBLE);
-            noCompass.setText(R.string.compass_top_text);
+            Toast.makeText(getApplicationContext(),R.string.compass_top_text,Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -80,9 +83,7 @@ public class CompassActivity extends AppCompatActivity implements SensorEventLis
             directionSensor.unregisterListener(this);
         } else {
             // fail! we dont have an accelerometer!
-            degree.setVisibility(View.INVISIBLE);
-            poleDirection.setVisibility(View.INVISIBLE);
-            noCompass.setText(R.string.compass_top_text);
+            Toast.makeText(getApplicationContext(),R.string.compass_top_text,Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -170,12 +171,11 @@ public class CompassActivity extends AppCompatActivity implements SensorEventLis
 
     }
 
-    private View.OnClickListener compassClick = new View.OnClickListener() {
+    View.OnClickListener compassClick = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            if (v.getId() == R.id.guidanceCompass){
-                Intent intent = new Intent(CompassActivity.this,GuidanceActivity.class);
-            }
+            Intent intent = new Intent(CompassActivity.this, GuidanceActivity.class);
+            startActivity(intent);
         }
     };
 }
