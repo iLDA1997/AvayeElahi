@@ -26,6 +26,7 @@ public class HolidaysActivity extends AppCompatActivity {
         toolbarHoliday.setTitle(R.string.app_activity_holidays);
         setSupportActionBar(toolbarHoliday);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbarHoliday.setTitleTextColor(getResources().getColor(R.color.textTitleColor));
 
 
         holidayListView = (ListView) findViewById(R.id.holiday_list);

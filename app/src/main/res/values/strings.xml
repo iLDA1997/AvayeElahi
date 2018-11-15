@@ -3,6 +3,18 @@
     <string name="app_name_fa">آوای الهی</string>
     <string name="app_version">1.0.0</string>
 
+    <!--Activity Main-->
+    <string name="main_date_shamshi">تاریخ شمسی</string>
+    <string name="main_date_miladi">تاریخ میلادی</string>
+    <string name="main_date_ghamari">تاریخ قمری</string>
+    <string name="main_time_for_next_azan">زمان باقیمانده تا اذان بعدی</string>
+    <string name="main_azan_sobh">صبح</string>
+    <string name="main_tolu">طلوع</string>
+    <string name="main_azan_zhohr">ظهر</string>
+    <string name="main_azan_asr">عصر</string>
+    <string name="main_azan_maghreb">مغرب</string>
+    <string name="main_azan_eshaa">عشاء</string>
+
     <!--Activity Names-->
     <string name="app_Description">توضیحات</string>
     <string name="app_activity_about_us">درباره ما</string>
@@ -50,22 +62,22 @@
     <string name="compass_top_text">دستگاه شما فاقد قطب نما می باشد!</string>
     <string name="compass_bottom_back">بازگشت</string>
     <string name="compass_bottom_guidance">راهنما</string>
-    <string name="DirEast">East</string>
-    <string name="DirWest">West</string>
-    <string name="DirNorth">North</string>
-    <string name="DirSouth">South</string>
-    <string name="DirNorthEast">Northeast</string>
-    <string name="DirNorthNorthEast">North-Northeast</string>
-    <string name="DirEastNorthEast">East-Northeast</string>
-    <string name="DirSouthEast">Southeast</string>
-    <string name="DirEastSouthEast">East-Southeast</string>
-    <string name="DirSouthSouthEast">South-Southeat</string>
-    <string name="DirSouthWest">Southwest</string>
-    <string name="DirSouthSouthWest">South-Southwest</string>
-    <string name="DirWestSouthWest">West-Southwest</string>
-    <string name="DirNorthwest">Northwest</string>
-    <string name="DirWestNorthWest">West-Northwest</string>
-    <string name="DirNorthNorthWest">North-Northwest</string>
+    <string name="DirEast">شرق</string>
+    <string name="DirWest">غرب</string>
+    <string name="DirNorth">شمال</string>
+    <string name="DirSouth">جنوب</string>
+    <string name="DirNorthEast">شمال شرقی</string>
+    <string name="DirNorthNorthEast">شمال - شمال شرقی</string>
+    <string name="DirEastNorthEast">شرق - شمال شرقی</string>
+    <string name="DirSouthEast">جنوب شرقی</string>
+    <string name="DirEastSouthEast">شرق - جنوب شرقی</string>
+    <string name="DirSouthSouthEast">جنوب - جنوب شرقی</string>
+    <string name="DirSouthWest">جنوب غربی</string>
+    <string name="DirSouthSouthWest">جنوب - جنوب غربی</string>
+    <string name="DirWestSouthWest">غرب - جنوب غربی</string>
+    <string name="DirNorthwest">شمال غربی</string>
+    <string name="DirWestNorthWest">غرب - شمال غربی</string>
+    <string name="DirNorthNorthWest">شمال - شمال غربی</string>
 
     <!--Menu Strings-->
     <string name="menu_home">صفحه اصلی</string>

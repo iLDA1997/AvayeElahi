@@ -2,6 +2,7 @@ package com.noobs_team.avayeelahi.Adapter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
+import android.text.method.ScrollingMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -62,5 +63,6 @@ public class HolidayAdapter extends ArrayAdapter {
             holidayGhamari.setText(holiday.getHolidayGhamari());
         }
     }
+
 
 }

@@ -83,8 +83,7 @@ public class CompassActivity extends AppCompatActivity implements SensorEventLis
             directionSensor.unregisterListener(this);
         } else {
             // fail! we dont have an accelerometer!
-            Toast.makeText(getApplicationContext(),R.string.compass_top_text,Toast.LENGTH_SHORT).show();
-        }
+            }
     }
 
     @Override

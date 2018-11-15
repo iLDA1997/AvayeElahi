@@ -12,6 +12,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CalendarView;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialdrawer.DrawerBuilder;
@@ -22,12 +24,18 @@ import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 import com.noobs_team.avayeelahi.R;
 
+import ir.mirrajabi.persiancalendar.PersianCalendarView;
+import ir.mirrajabi.persiancalendar.core.PersianCalendarHandler;
+import ir.mirrajabi.persiancalendar.core.models.CalendarEvent;
+import ir.mirrajabi.persiancalendar.core.models.PersianDate;
+
 import static android.provider.ContactsContract.Directory.PACKAGE_NAME;
 
 public class MainActivity extends AppCompatActivity {
 
     android.support.v7.widget.Toolbar toolbarMain;
     Button holidays;
+    ImageView calendarActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,20 +43,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         toolbarMain = findViewById(R.id.toolbar_main);
         holidays = findViewById(R.id.holidays);
+        calendarActivity = findViewById(R.id.calendar_activity);
         setupDrawer(this, toolbarMain);
-        holidays.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,HolidaysActivity.class));
-            }
-        });
+        holidays.setOnClickListener(mainOnClick);
+        calendarActivity.setOnClickListener(mainOnClick);
+
     }
 
     private void setupDrawer(MainActivity mainActivity, Toolbar toolbarMain) {
-
-        toolbarMain.setTitle(R.string.app_name_fa);
-        toolbarMain.setLogo(R.mipmap.ic_launcher);
-        toolbarMain.setTitleTextColor(Color.parseColor("#ffffff"));
 
         PrimaryDrawerItem homeItem = new PrimaryDrawerItem().withIdentifier(1).withSelectedTextColor(Color.parseColor("#000000")).withSelectedColor(Color.parseColor("#FF83CEC6")).withName(R.string.menu_home);
         PrimaryDrawerItem asmaKhodaItem = new PrimaryDrawerItem().withIdentifier(2).withSelectedTextColor(Color.parseColor("#000000")).withSelectedColor(Color.parseColor("#FF83CEC6")).withName(R.string.menu_asma_khoda);
@@ -103,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
                                 intent = new Intent(MainActivity.this, TasbihActivity.class);
                             }
                             else if (drawerItem.getIdentifier() == 11) {
-                                intent = new Intent(MainActivity.this, CalendarActivity.class);
+                                ///////////////////
                             }
                             else if (drawerItem.getIdentifier() == 9) {
                                 intent = new Intent(MainActivity.this, ChangeDateActivity.class);
@@ -159,4 +161,16 @@ public class MainActivity extends AppCompatActivity {
         AlertDialog alertDialog = alertDialogBuilder.create();
         alertDialog.show();
     }
+
+    private View.OnClickListener mainOnClick = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            if (v.getId() == R.id.calendar_activity){
+                startActivity(new Intent(MainActivity.this,CalendarActivity.class));
+            }
+            if (v.getId() == R.id.holidays){
+                startActivity(new Intent(MainActivity.this,HolidaysActivity.class));
+            }
+        }
+    };
 }
