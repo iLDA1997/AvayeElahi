@@ -3,11 +3,13 @@ package com.noobs_team.avayeelahi.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.Toolbar;
 
@@ -20,6 +22,7 @@ public class AboutUsActivity extends AppCompatActivity {
     LinearLayout layoutEmail;
     LinearLayout layoutStar;
     Intent intent;
+    TextView discription;
 
 
     @Override
@@ -32,11 +35,10 @@ public class AboutUsActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbarAboutUs.setTitleTextColor(getResources().getColor(R.color.textTitleColor));
 
-
-
         layoutTelegram = findViewById(R.id.about_us_telegram_layout);
         layoutEmail = findViewById(R.id.about_us_email_layout);
         layoutStar = findViewById(R.id.about_us_star_layout);
+
 
         layoutTelegram.setOnClickListener(aboutUsClicker);
         layoutEmail.setOnClickListener(aboutUsClicker);

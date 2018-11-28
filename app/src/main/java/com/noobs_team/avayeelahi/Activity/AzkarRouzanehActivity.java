@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ExpandableListView;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.noobs_team.avayeelahi.Adapter.ExpandableListAdapter;
@@ -24,6 +25,8 @@ public class AzkarRouzanehActivity extends AppCompatActivity {
     List<String> listDataHeader;
     HashMap<String, List<String>> listDataChild;
     ImageView fingerTap;
+    boolean TZekr1 = true,TZekr2 = true,TZekr3 = true,TZekr4 = true,TZekr5 = true,TZekr6 = true;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,7 +36,7 @@ public class AzkarRouzanehActivity extends AppCompatActivity {
         setSupportActionBar(toolbarAzkarRouzaneh);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbarAzkarRouzaneh.setTitleTextColor(getResources().getColor(R.color.textTitleColor));
-        fingerTap=findViewById(R.id.finger_tap);
+        fingerTap = findViewById(R.id.finger_tap);
 
         // get the listview
         expListView = (ExpandableListView) findViewById(R.id.lvExp);
@@ -47,7 +50,22 @@ public class AzkarRouzanehActivity extends AppCompatActivity {
         // setting list adapter
         expListView.setAdapter(listAdapter);
 
+
+        // Listview on child click listener
+        expListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
+
+            @Override
+            public boolean onChildClick(ExpandableListView parent, View v,
+                                        int groupPosition, int childPosition, long id) {
+                // TODO Auto-generated method stub
+
+                Intent intent = new Intent(AzkarRouzanehActivity.this,ZekrShomarActivity.class);
+                startActivity(intent);
+                return false;
+            }
+        });
     }
+
 
     /*
      * Preparing the list data
@@ -96,5 +114,4 @@ public class AzkarRouzanehActivity extends AppCompatActivity {
         listDataChild.put(listDataHeader.get(5), panjShanbeh);
         listDataChild.put(listDataHeader.get(6), jomee);
     }
-
 }

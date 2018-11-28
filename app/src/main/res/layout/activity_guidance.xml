@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Activity.GuidanceActivity">
 
     <com.blackgoblin.rtltoolbar.RtlToolbar
@@ -13,4 +13,27 @@
         android:background="?attr/colorPrimary"
         android:elevation="15dp" />
 
-</android.support.constraint.ConstraintLayout>
+    <ScrollView
+        android:id="@+id/guide_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/padddingGuidance"
+        android:layout_below="@id/toolbar_guidence"
+        android:shadowColor="#000000"
+        android:shadowDx="3"
+        android:shadowDy="3"
+        android:shadowRadius="15">
+
+        <TextView
+            android:id="@+id/guide_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:gravity="right"
+            android:padding="@dimen/padddingGuidance"
+            android:text="@string/guide_text"
+            />
+
+    </ScrollView>
+
+</RelativeLayout>

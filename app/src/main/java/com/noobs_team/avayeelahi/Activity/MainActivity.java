@@ -36,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
     android.support.v7.widget.Toolbar toolbarMain;
     Button holidays;
     ImageView calendarActivity;
+    ImageView volume1,volume2,volume3,volume4,volume5,volume6;
+    boolean b1 = true,b2 = true,b3 = true,b4 = true,b5 = true,b6 = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,10 +46,21 @@ public class MainActivity extends AppCompatActivity {
         toolbarMain = findViewById(R.id.toolbar_main);
         holidays = findViewById(R.id.holidays);
         calendarActivity = findViewById(R.id.calendar_activity);
+        volume1 = findViewById(R.id.main_volume_1);
+        volume2 = findViewById(R.id.main_volume_2);
+        volume3 = findViewById(R.id.main_volume_3);
+        volume4 = findViewById(R.id.main_volume_4);
+        volume5 = findViewById(R.id.main_volume_5);
+        volume6 = findViewById(R.id.main_volume_6);
         setupDrawer(this, toolbarMain);
         holidays.setOnClickListener(mainOnClick);
         calendarActivity.setOnClickListener(mainOnClick);
-
+        volume1.setOnClickListener(mainOnClick);
+        volume2.setOnClickListener(mainOnClick);
+        volume3.setOnClickListener(mainOnClick);
+        volume4.setOnClickListener(mainOnClick);
+        volume5.setOnClickListener(mainOnClick);
+        volume6.setOnClickListener(mainOnClick);
     }
 
     private void setupDrawer(MainActivity mainActivity, Toolbar toolbarMain) {
@@ -170,6 +183,66 @@ public class MainActivity extends AppCompatActivity {
             }
             if (v.getId() == R.id.holidays){
                 startActivity(new Intent(MainActivity.this,HolidaysActivity.class));
+            }
+            if (v.getId() == R.id.main_volume_1){
+                if (b1){
+                    volume1.setImageResource(R.drawable.silent);
+                    b1 = false;
+                }
+                else if (!b1){
+                    volume1.setImageResource(R.drawable.medium);
+                    b1 = true;
+                }
+            }
+            if (v.getId() == R.id.main_volume_2){
+                if (b2){
+                    volume2.setImageResource(R.drawable.silent);
+                    b2 = false;
+                }
+                else if (!b2){
+                    volume2.setImageResource(R.drawable.medium);
+                    b2 = true;
+                }
+            }
+            if (v.getId() == R.id.main_volume_3){
+                if (b3){
+                    volume3.setImageResource(R.drawable.silent);
+                    b3 = false;
+                }
+                else if (!b3){
+                    volume3.setImageResource(R.drawable.medium);
+                    b3 = true;
+                }
+            }
+            if (v.getId() == R.id.main_volume_4){
+                if (b4){
+                    volume4.setImageResource(R.drawable.silent);
+                    b4 = false;
+                }
+                else if (!b4){
+                    volume4.setImageResource(R.drawable.medium);
+                    b4 = true;
+                }
+            }
+            if (v.getId() == R.id.main_volume_5){
+                if (b5){
+                    volume5.setImageResource(R.drawable.silent);
+                    b5 = false;
+                }
+                else if (!b5){
+                    volume5.setImageResource(R.drawable.medium);
+                    b5 = true;
+                }
+            }
+            if (v.getId() == R.id.main_volume_6){
+                if (b6){
+                    volume6.setImageResource(R.drawable.silent);
+                    b6 = false;
+                }
+                else if (!b6){
+                    volume6.setImageResource(R.drawable.medium);
+                    b6 = true;
+                }
             }
         }
     };

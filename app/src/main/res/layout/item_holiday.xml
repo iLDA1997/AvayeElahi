@@ -15,16 +15,18 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:gravity="center"
                 android:id="@+id/holiday_subject"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="عید قربان"
-                android:maxLines="1"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:singleLine="true"
+                android:ellipsize="marquee"
+                android:marqueeRepeatLimit ="marquee_forever"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:scrollHorizontally="true"/>
 
             <TextView
-                android:gravity="center"
                 android:id="@+id/holiday_day_of_week"
                 android:layout_width="60dp"
                 android:layout_height="wrap_content"
@@ -38,7 +40,6 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:gravity="center"
                 android:id="@+id/holiday_miladi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -46,7 +47,6 @@
                 android:text="میلادی" />
 
             <TextView
-                android:gravity="center"
                 android:id="@+id/holiday_ghamari"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -54,7 +54,6 @@
                 android:text="قمری" />
 
             <TextView
-                android:gravity="center"
                 android:id="@+id/holiday_shamsi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

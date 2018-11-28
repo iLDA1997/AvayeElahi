@@ -52,6 +52,7 @@ public class ZekrShomarActivity extends AppCompatActivity {
         btnZekrRefresh = findViewById(R.id.btn_zekr_refresh);
         btnZekrMines = findViewById(R.id.btn_zekr_mines);
         btnZekrVolume = findViewById(R.id.btn_zekr_volume);
+
         // Get APSV
         mArcProgressStackView = (ArcProgressStackView) findViewById(R.id.apsv_zekr);
         // Get colors

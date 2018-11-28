@@ -30,6 +30,7 @@ public class HolidaysActivity extends AppCompatActivity {
 
 
         holidayListView = (ListView) findViewById(R.id.holiday_list);
+
         holidays = new ArrayList<>();
         prepareData();
         refreshDisplay();

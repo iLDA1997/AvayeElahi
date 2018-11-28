@@ -76,23 +76,21 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:gravity="center"
                         android:text="1397/08/18" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:gravity="center"
                         android:layout_gravity="center_vertical"
                         android:text="@string/main_date_shamshi" />
 
                 </LinearLayout>
 
                 <ImageView
-                    android:layout_width="240dp"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginVertical="2dp"
+                    android:layout_marginVertical="3dp"
                     android:layout_gravity="center"
                     android:src="@drawable/list_divider_v" />
 
@@ -105,23 +103,21 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:gravity="center"
                         android:text="2018/11/09" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:gravity="center"
                         android:layout_gravity="center_vertical"
                         android:text="@string/main_date_miladi" />
 
                 </LinearLayout>
 
                 <ImageView
-                    android:layout_width="240dp"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginVertical="2dp"
+                    android:layout_marginVertical="3dp"
                     android:layout_gravity="center"
                     android:src="@drawable/list_divider_v" />
 
@@ -134,14 +130,12 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:gravity="center"
                         android:text="1440/01/03" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:gravity="center"
                         android:layout_gravity="center_vertical"
                         android:text="@string/main_date_ghamari" />
 
@@ -191,8 +185,10 @@
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
+
+                        android:id="@+id/main_volume_1"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
                         android:src="@drawable/medium"/>
 
                     <TextView
@@ -221,7 +217,7 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginVertical="2dp"
+                    android:layout_marginVertical="3dp"
                     android:layout_gravity="center"
                     android:src="@drawable/list_divider_v" />
 
@@ -231,8 +227,9 @@
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
+                        android:id="@+id/main_volume_2"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
                         android:src="@drawable/medium"/>
 
                     <TextView
@@ -261,7 +258,7 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginVertical="2dp"
+                    android:layout_marginVertical="3dp"
                     android:layout_gravity="center"
                     android:src="@drawable/list_divider_v" />
 
@@ -271,8 +268,9 @@
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
+                        android:id="@+id/main_volume_3"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
                         android:src="@drawable/medium"/>
 
                     <TextView
@@ -301,7 +299,7 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginVertical="2dp"
+                    android:layout_marginVertical="3dp"
                     android:layout_gravity="center"
                     android:src="@drawable/list_divider_v" />
 
@@ -311,8 +309,9 @@
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
+                        android:id="@+id/main_volume_4"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
                         android:src="@drawable/medium" />
 
                     <TextView
@@ -341,7 +340,7 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginVertical="2dp"
+                    android:layout_marginVertical="3dp"
                     android:layout_gravity="center"
                     android:src="@drawable/list_divider_v" />
 
@@ -351,8 +350,9 @@
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
+                        android:id="@+id/main_volume_5"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
                         android:src="@drawable/medium"/>
 
                     <TextView
@@ -381,7 +381,7 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginVertical="2dp"
+                    android:layout_marginVertical="3dp"
                     android:layout_gravity="center"
                     android:src="@drawable/list_divider_v" />
 
@@ -391,8 +391,9 @@
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
+                        android:id="@+id/main_volume_6"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
                         android:src="@drawable/medium"/>
 
                     <TextView
