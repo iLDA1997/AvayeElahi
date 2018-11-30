@@ -73,7 +73,10 @@ public class MainActivity extends AppCompatActivity {
                 .withActivity(this)
                 .withHeaderBackground(R.drawable.side_nav_bar)
                 .withDividerBelowHeader(true)
-                .addProfiles( new ProfileDrawerItem().withEmail("asjyfasdasf").withName("ajshfdasfasfasgfasgasg").withIcon(R.drawable.asma_allah))
+                .addProfiles( new ProfileDrawerItem()
+                        .withEmail("asjyfasdasf")
+                        .withName("ajshfdasfasfasgfasgasg")
+                        .withIcon(R.drawable.asma_allah))
                 .withSelectionListEnabled(false)
                 .withProfileImagesClickable(false)
                 .build();
