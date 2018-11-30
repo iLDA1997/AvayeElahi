@@ -69,6 +69,15 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupDrawer(MainActivity mainActivity, Toolbar toolbarMain) {
 
+        AccountHeader headerResult = new AccountHeaderBuilder()
+                .withActivity(this)
+                .withHeaderBackground(R.drawable.side_nav_bar)
+                .withDividerBelowHeader(true)
+                .addProfiles( new ProfileDrawerItem().withEmail("asjyfasdasf").withName("ajshfdasfasfasgfasgasg").withIcon(R.drawable.asma_allah))
+                .withSelectionListEnabled(false)
+                .withProfileImagesClickable(false)
+                .build();
+
         PrimaryDrawerItem homeItem = new PrimaryDrawerItem()
                 .withIdentifier(1)
                 .withSelectedTextColor(Color.parseColor("#000000"))
@@ -142,11 +151,12 @@ public class MainActivity extends AppCompatActivity {
                 .withSelectedColor(Color.parseColor("#FF83CEC6"))
                 .withName(R.string.menu_send_program);*/
 
-        final DrawerBuilder drawerBuilder = new DrawerBuilder();
-        drawerBuilder.withActivity(mainActivity);
-        drawerBuilder.withToolbar(this.toolbarMain);
-        drawerBuilder.withDrawerGravity(Gravity.RIGHT);
-        drawerBuilder.addDrawerItems(
+        final DrawerBuilder drawerBuilder = new DrawerBuilder()
+        .withActivity(mainActivity)
+        .withToolbar(this.toolbarMain)
+        .withAccountHeader(headerResult)
+        .withDrawerGravity(Gravity.RIGHT)
+        .addDrawerItems(
 
                 homeItem,
                 new DividerDrawerItem(),
@@ -190,6 +200,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 })
                 .withActionBarDrawerToggleAnimated(true);
+
         Drawer result = drawerBuilder.build();
     }
 
