@@ -15,13 +15,17 @@ import android.widget.CalendarView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.mikepenz.materialdrawer.AccountHeader;
+import com.mikepenz.materialdrawer.AccountHeaderBuilder;
 import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialdrawer.DrawerBuilder;
 import com.mikepenz.materialdrawer.model.DividerDrawerItem;
 import com.mikepenz.materialdrawer.model.ExpandableDrawerItem;
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
+import com.mikepenz.materialdrawer.model.ProfileDrawerItem;
 import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
+import com.mikepenz.materialdrawer.model.interfaces.IProfile;
 import com.noobs_team.avayeelahi.R;
 
 import ir.mirrajabi.persiancalendar.PersianCalendarView;
@@ -132,11 +136,11 @@ public class MainActivity extends AppCompatActivity {
                 .withSelectedColor(Color.parseColor("#FF83CEC6"))
                 .withName(R.string.menu_about_us);
 
-        PrimaryDrawerItem linkProgramItem = new PrimaryDrawerItem()
+        /*PrimaryDrawerItem linkProgramItem = new PrimaryDrawerItem()
                 .withIdentifier(11)
                 .withSelectedTextColor(Color.parseColor("#000000"))
                 .withSelectedColor(Color.parseColor("#FF83CEC6"))
-                .withName(R.string.menu_send_program);
+                .withName(R.string.menu_send_program);*/
 
         final DrawerBuilder drawerBuilder = new DrawerBuilder();
         drawerBuilder.withActivity(mainActivity);
@@ -152,8 +156,8 @@ public class MainActivity extends AppCompatActivity {
                 changeDateItem,
                 new DividerDrawerItem(),
                 settingsItem,
-                aboutUsItem,
-                linkProgramItem
+                aboutUsItem
+                //linkProgramItem
 
         )
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
@@ -169,8 +173,6 @@ public class MainActivity extends AppCompatActivity {
                                 intent = new Intent(MainActivity.this, ZekrShomarActivity.class);
                             } else if (drawerItem.getIdentifier() == 5) {
                                 intent = new Intent(MainActivity.this, TasbihActivity.class);
-                            } else if (drawerItem.getIdentifier() == 11) {
-                                /////
                             } else if (drawerItem.getIdentifier() == 9) {
                                 intent = new Intent(MainActivity.this, ChangeDateActivity.class);
                             } else if (drawerItem.getIdentifier() == 2) {
