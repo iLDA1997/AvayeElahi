@@ -1,18 +1,22 @@
 package com.noobs_team.avayeelahi.Activity;
 
-import android.content.BroadcastReceiver;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.noobs_team.avayeelahi.R;
 
 import ir.mirrajabi.persiancalendar.PersianCalendarView;
 import ir.mirrajabi.persiancalendar.core.PersianCalendarHandler;
+import ir.mirrajabi.persiancalendar.core.interfaces.OnDayClickedListener;
 import ir.mirrajabi.persiancalendar.core.interfaces.OnMonthChangedListener;
+import ir.mirrajabi.persiancalendar.core.models.CalendarEvent;
 import ir.mirrajabi.persiancalendar.core.models.PersianDate;
 
 
@@ -24,14 +28,12 @@ public class CalendarActivity extends AppCompatActivity {
     PersianCalendarView persianCalendarView;
     Button calendarMahanehButton;
     Button calendarRouzanehButton;
-    TextView calendarNumberOfYear;
-    TextView calendarNameOfMonth;
-    TextView calendarNumberOfDay;
-    TextView calendarNameOfWeek;
-    String month;
-    int year;
-    String week;
-    int day;
+    ImageView calendarBackButton;
+    ImageView calendarForwardButton;
+    TextView calendarYear;
+    TextView calendarDayAndMonth;
+    String dayAndMonth;
+    TextView eventText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,91 +43,84 @@ public class CalendarActivity extends AppCompatActivity {
         calendarComeBack = findViewById(R.id.calendar_come_back);
         calendarMahanehButton = findViewById(R.id.calendar_top_button_mahaneh);
         calendarRouzanehButton = findViewById(R.id.calendar_top_button_rouzaneh);
-        calendarNumberOfYear = findViewById(R.id.calendar_number_of_year);
-        calendarNameOfMonth = findViewById(R.id.calendar_name_of_month);
-        calendarNumberOfDay = findViewById(R.id.calendar_number_of_day);
-        calendarNameOfWeek = findViewById(R.id.calendar_name_of_week);
-
+        calendarYear = findViewById(R.id.calendar_year);
+        calendarDayAndMonth = findViewById(R.id.calendar_day_and_month);
+        calendarBackButton = findViewById(R.id.back_calendar);
+        calendarForwardButton = findViewById(R.id.forward_calendar);
+        eventText = findViewById(R.id.event_text);
         persianCalendarView = (PersianCalendarView) findViewById(R.id.persian_calendar);
         calendar = persianCalendarView.getCalendar();
         today = calendar.getToday();
-        //   month = persianCalendarView.get;
-        //   week =;
 
-        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        /*calendar.addLocalEvent(new CalendarEvent(
-                today, "Custom event", false
-        ));
-        calendar.addLocalEvent(new CalendarEvent(
-                today.clone().rollDay(2,true), "Custom event 2", true
-        ));
+        calendarComeBack.setOnClickListener(clickListener);
+        calendarRouzanehButton.setOnClickListener(clickListener);
+        calendarForwardButton.setOnClickListener(clickListener);
+        calendarBackButton.setOnClickListener(clickListener);
+
+        dayAndMonth = calendar.getWeekDayName(today) + " " + calendar.formatNumber(today.getDayOfMonth())
+                + " " + calendar.getMonthName(today) + " ";
+        calendarDayAndMonth.setText(dayAndMonth);
+        calendarYear.setText(calendar.formatNumber(today.getYear()));
+
+        if (calendar.getAllEventsForDay(today).isEmpty()){
+            eventText.setText(getResources().getString(R.string.calendar_non_event));
+        }
+        else {
+            for(CalendarEvent event : calendar.getAllEventsForDay(today))
+                eventText.setText(event.getTitle());
+        }
+
         calendar.setOnMonthChangedListener(new OnMonthChangedListener() {
             @Override
             public void onChanged(PersianDate date) {
-                Toast.makeText(CalendarActivity.this, calendar.getMonthName(date),Toast.LENGTH_SHORT).show();
+                calendarDayAndMonth.setText(
+                        calendar.formatNumber(calendar.getWeekDayName(date) + " " +
+                                calendar.formatNumber(date.getDayOfMonth()) + " " +
+                                calendar.formatNumber(calendar.getMonthName(date)) + " "));
+                calendarYear.setText(calendar.formatNumber(date.getYear()));
+
+                if (calendar.getAllEventsForDay(today).size()==0){
+                    eventText.setText(getResources().getString(R.string.calendar_non_event));
+                }
+                else {
+                    for(CalendarEvent event : calendar.getAllEventsForDay(date))
+                        eventText.setText(event.getTitle());
+                }
             }
         });
+
         persianCalendarView.setOnDayClickedListener(new OnDayClickedListener() {
             @Override
             public void onClick(PersianDate date) {
-                for(CalendarEvent e : calendar.getAllEventsForDay(date))
-                    Toast.makeText(CalendarActivity.this, e.getTitle(), Toast.LENGTH_LONG).show();
-
-
-                calendar.addLocalEvent(new CalendarEvent(
-                        today.clone().rollDay(2, false), "Some event that will be added in runtime", false
-                ));
-                persianCalendarView.update();
+                if (calendar.getAllEventsForDay(today).size()==0){
+                    eventText.setText(getResources().getString(R.string.calendar_non_event));
+                }
+                else {
+                    for(CalendarEvent event : calendar.getAllEventsForDay(date))
+                        eventText.setText(event.getTitle());
+                }
             }
         });
 
-        calendar.setHighlightOfficialEvents(false);
-
-        String dayAndMonth = calendar.getWeekDayName(today) + calendar.formatNumber(today.getDayOfMonth())
-                + calendar.getMonthName(today);
-        txtDayMonth.setText(dayAndMonth);
-        txtYear.setText(calendar.formatNumber(today.getYear()));
-
-        calendar.setColorBackground(getResources().getColor(android.R.color.holo_blue_dark));
-        persianCalendarView.update();*/
-        //////////////////////////////////////////////////////////////////////////////////////////////////////////
-        calendarComeBack.setOnClickListener(clickListener);
-        calendarRouzanehButton.setOnClickListener(clickListener);
-
-        calendar.setOnMonthChangedListener(new OnMonthChangedListener() {
-            @Override
-            public void onChanged(PersianDate date) {
-                month = calendar.getMonthName(date);
-                calendarNameOfMonth.setText(month);
-            }
-        });
-
-        if (persianCalendarView.isSelected()) {
-
-    //        persianCalendarView.;
-    //        calendarNumberOfYear.setText(calendar.formatNumber();
-    //        calendarNumberOfDay.setText(calendar.formatNumber();
-    //        calendarNameOfMonth.setText(calendar.getMonthName();
-    //        calendarNameOfWeek.setText(calendar.formatNumber();
-
-
-        }
     }
 
     private View.OnClickListener clickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             if (v.getId() == R.id.calendar_come_back) {
-                day = today.getDayOfMonth();
-                month = calendar.getMonthName(today);
-                week = calendar.getWeekDayName(today);
-                year = today.getYear();
+                dayAndMonth = calendar.getWeekDayName(today) + " " + calendar.formatNumber(today.getDayOfMonth())
+                        + " " + calendar.getMonthName(today) + " ";
+                calendarDayAndMonth.setText(dayAndMonth);
+                calendarYear.setText(calendar.formatNumber(today.getYear()));
+                persianCalendarView.update();
 
-                calendarNameOfMonth.setText(month);
-                calendarNameOfWeek.setText(week);
-                calendarNumberOfDay.setText(day + "");
-                calendarNumberOfYear.setText(year + "");
-                persianCalendarView.goToToday();
+                if (calendar.getAllEventsForDay(today).size()==0){
+                    eventText.setText(getResources().getString(R.string.calendar_non_event));
+                }
+                else {
+                    for(CalendarEvent event : calendar.getAllEventsForDay(today))
+                        eventText.setText(event.getTitle());
+                }
             }
             if (v.getId() == R.id.calendar_top_button_mahaneh) {
 
@@ -133,6 +128,13 @@ public class CalendarActivity extends AppCompatActivity {
             if (v.getId() == R.id.calendar_top_button_rouzaneh) {
 
             }
+            if (v.getId() == R.id.back_calendar) {
+                persianCalendarView.goToPreviousMonth();
+            }
+            if (v.getId() == R.id.forward_calendar) {
+                persianCalendarView.goToNextMonth();
+            }
+
         }
     };
 }

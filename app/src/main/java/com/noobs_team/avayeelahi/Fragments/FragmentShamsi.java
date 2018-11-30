@@ -29,5 +29,6 @@ public class FragmentShamsi extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_shamsi,container,false);
         return view;
+
     }
 }

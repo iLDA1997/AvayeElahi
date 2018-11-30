@@ -47,28 +47,16 @@
                 android:gravity="center">
 
                 <TextView
-                    android:id="@+id/calendar_number_of_year"
+                    android:id="@+id/calendar_year"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="1398" />
 
                 <TextView
-                    android:id="@+id/calendar_name_of_month"
+                    android:id="@+id/calendar_day_and_month"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="مهر" />
-
-                <TextView
-                    android:id="@+id/calendar_number_of_day"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="18" />
-
-                <TextView
-                    android:id="@+id/calendar_name_of_week"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text=" چهارشنبه" />
 
             </LinearLayout>
 
@@ -88,16 +76,21 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:layout_width="wrap_content"
+            android:id="@+id/forward_calendar"
+            android:layout_width="50dp"
             android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
             android:layout_weight="1"
-            />
+            android:src="@drawable/backbutton" />
 
         <ir.mirrajabi.persiancalendar.PersianCalendarView
             android:id="@+id/persian_calendar"
             android:layout_width="match_parent"
             android:layout_height="290dp"
             android:layout_below="@id/persian_calendar"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
             app:pcv_colorBackground="#59b033"
             app:pcv_colorDayName="#00650b"
             app:pcv_colorHoliday="#ff0e06"
@@ -106,13 +99,50 @@
             app:pcv_colorNormalDaySelected="#f6f6f6"
             app:pcv_eventUnderlineColor="#0dff00"
             app:pcv_fontSize="15sp"
-            app:pcv_headersFontSize="15sp"
-            android:layout_weight="1"/>
+            app:pcv_headersFontSize="15sp" />
 
         <ImageView
-            android:layout_width="wrap_content"
+            android:id="@+id/back_calendar"
+            android:layout_width="50dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"/>
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:src="@drawable/forwardbutton" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_margin="5dp"
+        android:background="#ebebeb"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginTop="5dp"
+            android:gravity="right"
+            android:text="رویداد ها"
+
+            android:textSize="13sp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="5dp" />
+
+        <TextView
+            android:id="@+id/event_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginBottom="5dp"
+            android:text="@string/calendar_non_event"
+            android:textSize="15sp" />
+
 
     </LinearLayout>
 

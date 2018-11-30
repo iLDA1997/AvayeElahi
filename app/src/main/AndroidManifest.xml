@@ -35,7 +35,7 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".Activity.GuidanceActivity"
-            android:parentActivityName=".Activity.MainActivity" />
+            android:parentActivityName=".Activity.CompassActivity" />
         <activity
             android:name=".Activity.AboutUsActivity"
             android:parentActivityName=".Activity.MainActivity" />
@@ -51,7 +51,8 @@
         <activity
             android:name=".Activity.AzkarRouzanehActivity"
             android:parentActivityName=".Activity.MainActivity" />
-        <activity android:name=".Activity.CalendarActivity"></activity>
+
+        <activity android:name=".Activity.CalendarActivity"/>
     </application>
 
 </manifest>

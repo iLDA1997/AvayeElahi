@@ -60,6 +60,7 @@
             </LinearLayout>
 
             <TextView
+                android:id="@+id/about_us_discription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="25dp"

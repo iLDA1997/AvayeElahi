@@ -31,11 +31,19 @@ public class ZekrShomarActivity extends AppCompatActivity {
     private int[] mEndColors = new int[MODEL_COUNT];
     // First full size of APSV
     private int mFullSize = -1;
+    android.support.v7.widget.Toolbar toolbarZekrShomar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_zekr_shomar);
+
+        toolbarZekrShomar = findViewById(R.id.toolbar_zekr_shomar);
+        toolbarZekrShomar.setTitle(R.string.app_activity_zekr_shomar);
+        setSupportActionBar(toolbarZekrShomar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbarZekrShomar.setTitleTextColor(getResources().getColor(R.color.textTitleColor));
+
 
         topTextZekr = findViewById(R.id.top_text_zekr);
         topTextZekr2 = findViewById(R.id.top_text_zekr2);
@@ -44,6 +52,7 @@ public class ZekrShomarActivity extends AppCompatActivity {
         btnZekrRefresh = findViewById(R.id.btn_zekr_refresh);
         btnZekrMines = findViewById(R.id.btn_zekr_mines);
         btnZekrVolume = findViewById(R.id.btn_zekr_volume);
+
         // Get APSV
         mArcProgressStackView = (ArcProgressStackView) findViewById(R.id.apsv_zekr);
         // Get colors

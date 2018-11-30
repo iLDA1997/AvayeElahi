@@ -14,10 +14,13 @@ import android.view.animation.RotateAnimation;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.noobs_team.avayeelahi.R;
 
-public class CompassActivity extends AppCompatActivity implements SensorEventListener, View.OnClickListener {
+import static com.noobs_team.avayeelahi.R.string.compass_top_text;
+
+public class CompassActivity extends AppCompatActivity implements SensorEventListener {
     private ImageView compassImage;
     private TextView poleView;
     private TextView poleDirection;
@@ -25,16 +28,20 @@ public class CompassActivity extends AppCompatActivity implements SensorEventLis
     private TextView degree;
     private SensorManager directionSensor;
     private float currentDegree = 0f;
-    private Button downBackText;
-    private Button downGuidanceText;
-    private TextView noCompass;
+
+    android.support.v7.widget.Toolbar toolbarCompass;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_compass);
 
-        noCompass = findViewById(R.id.noCompass);
+        toolbarCompass = findViewById(R.id.toolbar_compass);
+        toolbarCompass.setTitle(R.string.app_activity_compass);
+        setSupportActionBar(toolbarCompass);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbarCompass.setTitleTextColor(getResources().getColor(R.color.textTitleColor));
+
         poleDirection = findViewById(R.id.poleDirection);
         degree = findViewById(R.id.degree);
         //Setting compass image
@@ -46,10 +53,11 @@ public class CompassActivity extends AppCompatActivity implements SensorEventLis
         //allows Sensor manager to the sensor service
         directionSensor = (SensorManager) getSystemService(SENSOR_SERVICE);
 
-        downBackText = findViewById(R.id.backCompass);
-        downBackText.setOnClickListener(CompassActivity.this);
-        downGuidanceText = findViewById(R.id.guidanceCompass);
-        downGuidanceText.setOnClickListener(CompassActivity.this);
+        degreeVeiw.setText("");
+        poleView.setText("");
+
+        Button guidanceText = findViewById(R.id.guidanceCompass);
+        guidanceText.setOnClickListener(compassClick);
     }
 
 
@@ -62,9 +70,7 @@ public class CompassActivity extends AppCompatActivity implements SensorEventLis
                     SensorManager.SENSOR_DELAY_GAME);
         } else {
             // fail! we dont have an accelerometer!
-            degree.setVisibility(View.INVISIBLE);
-            poleDirection.setVisibility(View.INVISIBLE);
-            noCompass.setText(R.string.compass_top_text);
+            Toast.makeText(getApplicationContext(),R.string.compass_top_text,Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -77,10 +83,7 @@ public class CompassActivity extends AppCompatActivity implements SensorEventLis
             directionSensor.unregisterListener(this);
         } else {
             // fail! we dont have an accelerometer!
-            degree.setVisibility(View.INVISIBLE);
-            poleDirection.setVisibility(View.INVISIBLE);
-            noCompass.setText(R.string.compass_top_text);
-        }
+            }
     }
 
     @Override
@@ -167,13 +170,11 @@ public class CompassActivity extends AppCompatActivity implements SensorEventLis
 
     }
 
-    @Override
-    public void onClick(View v) {
-        if (v.getId() == R.id.backCompass){
-            onBackPressed();
-        }
-        if (v.getId() == R.id.guidanceCompass){
+    View.OnClickListener compassClick = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
             Intent intent = new Intent(CompassActivity.this, GuidanceActivity.class);
+            startActivity(intent);
         }
-    }
+    };
 }
