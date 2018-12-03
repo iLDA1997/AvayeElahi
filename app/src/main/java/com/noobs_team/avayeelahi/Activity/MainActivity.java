@@ -1,17 +1,21 @@
 package com.noobs_team.avayeelahi.Activity;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
+import android.support.design.widget.NavigationView;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CalendarView;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -42,6 +46,9 @@ public class MainActivity extends AppCompatActivity {
     ImageView calendarActivity;
     ImageView volume1, volume2, volume3, volume4, volume5, volume6;
     boolean b1 = true, b2 = true, b3 = true, b4 = true, b5 = true, b6 = true;
+    PersianCalendarView persianCalendarView;
+    //TextView mainMenuHeaderToday;
+    //PersianCalendarHandler calendar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,13 +57,19 @@ public class MainActivity extends AppCompatActivity {
         toolbarMain = findViewById(R.id.toolbar_main);
         holidays = findViewById(R.id.holidays);
         calendarActivity = findViewById(R.id.calendar_activity);
+        //mainMenuHeaderToday = findViewById(R.id.material_drawer_account_header_today);
+        //persianCalendarView = findViewById(R.id.persian_calendar);
+
+        //final LayoutInflater  inflater = (LayoutInflater)getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        //FrameLayout header = (FrameLayout)inflater.inflate(R.layout.material_drawer_header,null);
+
         volume1 = findViewById(R.id.main_volume_1);
         volume2 = findViewById(R.id.main_volume_2);
         volume3 = findViewById(R.id.main_volume_3);
         volume4 = findViewById(R.id.main_volume_4);
         volume5 = findViewById(R.id.main_volume_5);
         volume6 = findViewById(R.id.main_volume_6);
-        setupDrawer(this, toolbarMain);
+        setupDrawer(this);
         holidays.setOnClickListener(mainOnClick);
         calendarActivity.setOnClickListener(mainOnClick);
         volume1.setOnClickListener(mainOnClick);
@@ -65,18 +78,21 @@ public class MainActivity extends AppCompatActivity {
         volume4.setOnClickListener(mainOnClick);
         volume5.setOnClickListener(mainOnClick);
         volume6.setOnClickListener(mainOnClick);
+
+        //calendar = persianCalendarView.getCalendar();
+        //PersianDate today = calendar.getToday();
+        //String dayAndMonth = calendar.getWeekDayName(today) + " " + calendar.formatNumber(today.getDayOfMonth())
+        //        + " " + calendar.getMonthName(today) + " " + calendar.formatNumber(today.getYear());
+        //mainMenuHeaderToday.setText(dayAndMonth);
     }
 
-    private void setupDrawer(MainActivity mainActivity, Toolbar toolbarMain) {
+    private void setupDrawer(MainActivity mainActivity) {
 
         AccountHeader headerResult = new AccountHeaderBuilder()
                 .withActivity(this)
                 .withHeaderBackground(R.drawable.side_nav_bar)
                 .withDividerBelowHeader(true)
-                .addProfiles( new ProfileDrawerItem()
-                        .withEmail("asjyfasdasf")
-                        .withName("ajshfdasfasfasgfasgasg")
-                        .withIcon(R.drawable.asma_allah))
+                .addProfiles( new ProfileDrawerItem().withIcon(R.drawable.asma_allah))
                 .withSelectionListEnabled(false)
                 .withProfileImagesClickable(false)
                 .build();
