@@ -14,6 +14,8 @@
     <string name="main_azan_asr">عصر</string>
     <string name="main_azan_maghreb">مغرب</string>
     <string name="main_azan_eshaa">عشاء</string>
+    <string name="main_menu_header_next_azan_text">اذان بعدی: </string>
+    <string name="main_menu_header_today_text">امروز </string>
 
     <!--Activity Names-->
     <string name="app_Description">توضیحات</string>
