@@ -1,21 +1,15 @@
 package com.noobs_team.avayeelahi.Activity;
 
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
-import android.support.design.widget.NavigationView;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Gravity;
-import android.support.v7.widget.Toolbar;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CalendarView;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -29,13 +23,12 @@ import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.ProfileDrawerItem;
 import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
-import com.mikepenz.materialdrawer.model.interfaces.IProfile;
 import com.noobs_team.avayeelahi.R;
 
 import ir.mirrajabi.persiancalendar.PersianCalendarView;
 import ir.mirrajabi.persiancalendar.core.PersianCalendarHandler;
-import ir.mirrajabi.persiancalendar.core.models.CalendarEvent;
 import ir.mirrajabi.persiancalendar.core.models.PersianDate;
+import com.noobs_team.avayeelahi.Time.PrayTime;
 
 import static android.provider.ContactsContract.Directory.PACKAGE_NAME;
 
@@ -43,13 +36,14 @@ public class MainActivity extends AppCompatActivity {
 
     android.support.v7.widget.Toolbar toolbarMain;
     Button holidays;
-    ImageView calendarActivity;
-    ImageView volume1, volume2, volume3, volume4, volume5, volume6;
+    ImageView calendarActivity, volume1, volume2, volume3, volume4, volume5, volume6;
     boolean b1 = true, b2 = true, b3 = true, b4 = true, b5 = true, b6 = true;
     PersianCalendarView persianCalendarView;
     AccountHeader headerResult;
-    TextView mainMenuHeaderToday;
+    TextView mainMenuHeaderToday, todayShamsi, todayMiladi, todayJalali;
     PersianCalendarHandler calendar;
+    PrayTime jDate;
+    PersianDate date;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,6 +59,9 @@ public class MainActivity extends AppCompatActivity {
         volume4 = findViewById(R.id.main_volume_4);
         volume5 = findViewById(R.id.main_volume_5);
         volume6 = findViewById(R.id.main_volume_6);
+        todayShamsi = findViewById(R.id.today_shamsi);
+        todayMiladi = findViewById(R.id.today_miladi);
+        todayJalali = findViewById(R.id.today_jalali);
         setupDrawer(this);
         mainMenuHeaderToday = headerResult
                 .getView()
@@ -78,10 +75,14 @@ public class MainActivity extends AppCompatActivity {
         volume5.setOnClickListener(mainOnClick);
         volume6.setOnClickListener(mainOnClick);
 
+        todayJalali.setText((int) jTime);
+
         calendar = persianCalendarView.getCalendar();
         PersianDate today = calendar.getToday();
-        String dayAndMonth = calendar.getWeekDayName(today) + " " + calendar.formatNumber(today.getDayOfMonth())
-                + " " + calendar.getMonthName(today) + " " + calendar.formatNumber(today.getYear());
+        String dayAndMonth = calendar.getWeekDayName(today)
+                + " " + calendar.formatNumber(today.getDayOfMonth())
+                + " " + calendar.getMonthName(today)
+                + " " + calendar.formatNumber(today.getYear());
         mainMenuHeaderToday.setText(dayAndMonth);
     }
 
@@ -89,9 +90,10 @@ public class MainActivity extends AppCompatActivity {
 
         headerResult = new AccountHeaderBuilder()
                 .withActivity(this)
-                .withHeaderBackground(R.drawable.side_nav_bar)
+                .withHeaderBackground(R.color.accountHeaderColor)
                 .withDividerBelowHeader(true)
-                .addProfiles( new ProfileDrawerItem().withIcon(R.drawable.asma_allah))
+                .addProfiles( new ProfileDrawerItem()
+                        .withIcon(R.drawable.ic_avaye_elahi_logo_circle))
                 .withSelectionListEnabled(false)
                 .withProfileImagesClickable(false)
                 .build();

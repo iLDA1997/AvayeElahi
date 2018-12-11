@@ -43,7 +43,7 @@
                 android:layout_height="45dp"
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="5dp"
-                android:src="@mipmap/ic_launcher" />
+                android:src="@drawable/ic_avaye_elahi_logo_circle" />
 
         </LinearLayout>
 
@@ -78,6 +78,7 @@
                     android:orientation="horizontal">
 
                     <TextView
+                        android:id="@+id/today_shamsi"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -105,6 +106,7 @@
                     android:orientation="horizontal">
 
                     <TextView
+                        android:id="@+id/today_miladi"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -132,6 +134,7 @@
                     android:orientation="horizontal">
 
                     <TextView
+                        android:id="@+id/today_jalali"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
