@@ -14,8 +14,8 @@
     <string name="main_azan_asr">عصر</string>
     <string name="main_azan_maghreb">مغرب</string>
     <string name="main_azan_eshaa">عشاء</string>
-    <string name="main_menu_header_next_azan_text">اذان بعدی: </string>
-    <string name="main_menu_header_today_text">امروز </string>
+    <string name="main_menu_header_next_azan_text">اذان بعدی </string>
+    <string name="main_menu_header_today_text">تاریخ امروز </string>
 
     <!--Activity Names-->
     <string name="app_Description">توضیحات</string>
@@ -90,7 +90,7 @@
     <string name="menu_zekr_shomar">ذکر شمار</string>
     <string name="menu_compass">قبله نما</string>
     <string name="menu_settings">تنظیمات</string>
-    <string name="menu_change_date">تبدیل تاریخ ها</string>
+    <string name="menu_change_date">تبدیل تاریخ</string>
     <string name="menu_send_program">ارسال برنامه</string>
     <string name="menu_about_us">درباره ما</string>
 

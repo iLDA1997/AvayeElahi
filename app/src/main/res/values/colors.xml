@@ -26,6 +26,8 @@
     <color name="calendarTopButton">#76FF03</color>
     <color name="calendarTopDefaultButton">#d6d7d7</color>
 
+    <color name="iconColor">#33b5e5</color>
+
 
     <!--reds-->
     <color name="md_red_50">#FFEBEE</color>
