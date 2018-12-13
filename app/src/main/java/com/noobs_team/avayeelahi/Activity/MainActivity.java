@@ -1,21 +1,15 @@
 package com.noobs_team.avayeelahi.Activity;
 
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
-import android.support.design.widget.NavigationView;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Gravity;
-import android.support.v7.widget.Toolbar;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CalendarView;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -29,13 +23,12 @@ import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.ProfileDrawerItem;
 import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
-import com.mikepenz.materialdrawer.model.interfaces.IProfile;
 import com.noobs_team.avayeelahi.R;
 
 import ir.mirrajabi.persiancalendar.PersianCalendarView;
 import ir.mirrajabi.persiancalendar.core.PersianCalendarHandler;
-import ir.mirrajabi.persiancalendar.core.models.CalendarEvent;
 import ir.mirrajabi.persiancalendar.core.models.PersianDate;
+import com.noobs_team.avayeelahi.Time.PrayTime;
 
 import static android.provider.ContactsContract.Directory.PACKAGE_NAME;
 
@@ -43,12 +36,14 @@ public class MainActivity extends AppCompatActivity {
 
     android.support.v7.widget.Toolbar toolbarMain;
     Button holidays;
-    ImageView calendarActivity;
-    ImageView volume1, volume2, volume3, volume4, volume5, volume6;
+    ImageView calendarActivity, volume1, volume2, volume3, volume4, volume5, volume6;
     boolean b1 = true, b2 = true, b3 = true, b4 = true, b5 = true, b6 = true;
     PersianCalendarView persianCalendarView;
-    //TextView mainMenuHeaderToday;
-    //PersianCalendarHandler calendar;
+    AccountHeader headerResult;
+    TextView mainMenuHeaderToday, todayShamsi, todayMiladi, todayJalali;
+    PersianCalendarHandler calendar;
+    //PrayTime jDate;
+    //PersianDate date;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,19 +52,20 @@ public class MainActivity extends AppCompatActivity {
         toolbarMain = findViewById(R.id.toolbar_main);
         holidays = findViewById(R.id.holidays);
         calendarActivity = findViewById(R.id.calendar_activity);
-        //mainMenuHeaderToday = findViewById(R.id.material_drawer_account_header_today);
-        //persianCalendarView = findViewById(R.id.persian_calendar);
-
-        //final LayoutInflater  inflater = (LayoutInflater)getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        //FrameLayout header = (FrameLayout)inflater.inflate(R.layout.material_drawer_header,null);
-
+        persianCalendarView = findViewById(R.id.persian_calendar);
         volume1 = findViewById(R.id.main_volume_1);
         volume2 = findViewById(R.id.main_volume_2);
         volume3 = findViewById(R.id.main_volume_3);
         volume4 = findViewById(R.id.main_volume_4);
         volume5 = findViewById(R.id.main_volume_5);
         volume6 = findViewById(R.id.main_volume_6);
+        todayShamsi = findViewById(R.id.today_shamsi);
+        todayMiladi = findViewById(R.id.today_miladi);
+        todayJalali = findViewById(R.id.today_jalali);
         setupDrawer(this);
+        mainMenuHeaderToday = headerResult
+                .getView()
+                .findViewById(R.id.material_drawer_account_header_today);
         holidays.setOnClickListener(mainOnClick);
         calendarActivity.setOnClickListener(mainOnClick);
         volume1.setOnClickListener(mainOnClick);
@@ -79,20 +75,25 @@ public class MainActivity extends AppCompatActivity {
         volume5.setOnClickListener(mainOnClick);
         volume6.setOnClickListener(mainOnClick);
 
-        //calendar = persianCalendarView.getCalendar();
-        //PersianDate today = calendar.getToday();
-        //String dayAndMonth = calendar.getWeekDayName(today) + " " + calendar.formatNumber(today.getDayOfMonth())
-        //        + " " + calendar.getMonthName(today) + " " + calendar.formatNumber(today.getYear());
-        //mainMenuHeaderToday.setText(dayAndMonth);
+        //todayJalali.setText((int) jTime);
+
+        calendar = persianCalendarView.getCalendar();
+        PersianDate today = calendar.getToday();
+        String dayAndMonth = calendar.getWeekDayName(today)
+                + " " + calendar.formatNumber(today.getDayOfMonth())
+                + " " + calendar.getMonthName(today)
+                + " " + calendar.formatNumber(today.getYear());
+        mainMenuHeaderToday.setText(dayAndMonth);
     }
 
     private void setupDrawer(MainActivity mainActivity) {
 
-        AccountHeader headerResult = new AccountHeaderBuilder()
+        headerResult = new AccountHeaderBuilder()
                 .withActivity(this)
-                .withHeaderBackground(R.drawable.side_nav_bar)
+                .withHeaderBackground(R.color.accountHeaderColor)
                 .withDividerBelowHeader(true)
-                .addProfiles( new ProfileDrawerItem().withIcon(R.drawable.asma_allah))
+                .addProfiles( new ProfileDrawerItem()
+                        .withIcon(R.drawable.ic_avaye_elahi_logo_circle))
                 .withSelectionListEnabled(false)
                 .withProfileImagesClickable(false)
                 .build();
@@ -100,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
         PrimaryDrawerItem homeItem = new PrimaryDrawerItem()
                 .withIdentifier(1)
                 .withSelectedTextColor(Color.parseColor("#000000"))
-                .withSelectedColor(Color.parseColor("#FF83CEC6"))
+                .withSelectedColor(getResources().getColor(R.color.menuSelectedColor))
                 .withName(R.string.menu_home)
                 .withIcon(R.drawable.home);
 
@@ -111,26 +112,29 @@ public class MainActivity extends AppCompatActivity {
                 .withName(R.string.menu_asma_khoda)
                 .withIcon(R.drawable.asma_allah);
 
-        SecondaryDrawerItem azkarRouzanehItem = new SecondaryDrawerItem()
+        SecondaryDrawerItem zekrShomarItem = new SecondaryDrawerItem()
                 .withLevel(2)
-                .withIdentifier(4)
+                .withIdentifier(6)
                 .withSelectedTextColor(Color.parseColor("#000000"))
                 .withSelectedColor(Color.parseColor("#FF83CEC6"))
-                .withName(R.string.menu_azkar_rouzaneh);
+                .withName(R.string.menu_zekr_shomar)
+                .withIcon(R.drawable.zekr);
 
         SecondaryDrawerItem tasbihItem = new SecondaryDrawerItem()
                 .withLevel(2)
                 .withIdentifier(5)
                 .withSelectedTextColor(Color.parseColor("#000000"))
                 .withSelectedColor(Color.parseColor("#FF83CEC6"))
-                .withName(R.string.menu_tasbih);
+                .withName(R.string.menu_tasbih)
+                .withIcon(R.drawable.tasbih);
 
-        SecondaryDrawerItem zekrShomarItem = new SecondaryDrawerItem()
+        SecondaryDrawerItem azkarRouzanehItem = new SecondaryDrawerItem()
                 .withLevel(2)
-                .withIdentifier(6)
+                .withIdentifier(4)
                 .withSelectedTextColor(Color.parseColor("#000000"))
                 .withSelectedColor(Color.parseColor("#FF83CEC6"))
-                .withName(R.string.menu_zekr_shomar);
+                .withName(R.string.menu_azkar_rouzaneh)
+                .withIcon(R.drawable.zekr);
 
         ExpandableDrawerItem jabehAbzarItem = new ExpandableDrawerItem()
                 .withIdentifier(3)
@@ -138,31 +142,35 @@ public class MainActivity extends AppCompatActivity {
                 .withSelectedColor(Color.parseColor("#FF83CEC6"))
                 .withName(R.string.menu_jabeh_abzar)
                 .withIcon(R.drawable.jabe_eslami)
-                .withSubItems(tasbihItem, zekrShomarItem, azkarRouzanehItem);
+                .withSubItems(zekrShomarItem, tasbihItem, azkarRouzanehItem);
 
         PrimaryDrawerItem compassItem = new PrimaryDrawerItem()
                 .withIdentifier(7)
                 .withSelectedTextColor(Color.parseColor("#000000"))
                 .withSelectedColor(Color.parseColor("#FF83CEC6"))
-                .withName(R.string.menu_compass);
-
-        PrimaryDrawerItem settingsItem = new PrimaryDrawerItem()
-                .withIdentifier(8)
-                .withSelectedTextColor(Color.parseColor("#000000"))
-                .withSelectedColor(Color.parseColor("#FF83CEC6"))
-                .withName(R.string.menu_settings);
+                .withName(R.string.menu_compass)
+                .withIcon(R.drawable.compass);
 
         PrimaryDrawerItem changeDateItem = new PrimaryDrawerItem()
                 .withIdentifier(9)
                 .withSelectedTextColor(Color.parseColor("#000000"))
                 .withSelectedColor(Color.parseColor("#FF83CEC6"))
-                .withName(R.string.menu_change_date);
+                .withName(R.string.menu_change_date)
+                .withIcon(R.drawable.change_date);
+
+        PrimaryDrawerItem settingsItem = new PrimaryDrawerItem()
+                .withIdentifier(8)
+                .withSelectedTextColor(Color.parseColor("#000000"))
+                .withSelectedColor(Color.parseColor("#FF83CEC6"))
+                .withName(R.string.menu_settings)
+                .withIcon(R.drawable.setting);
 
         PrimaryDrawerItem aboutUsItem = new PrimaryDrawerItem()
                 .withIdentifier(10)
                 .withSelectedTextColor(Color.parseColor("#000000"))
                 .withSelectedColor(Color.parseColor("#FF83CEC6"))
-                .withName(R.string.menu_about_us);
+                .withName(R.string.menu_about_us)
+                .withIcon(R.drawable.about_us);
 
         /*PrimaryDrawerItem linkProgramItem = new PrimaryDrawerItem()
                 .withIdentifier(11)

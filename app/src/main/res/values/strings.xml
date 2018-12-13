@@ -14,8 +14,8 @@
     <string name="main_azan_asr">عصر</string>
     <string name="main_azan_maghreb">مغرب</string>
     <string name="main_azan_eshaa">عشاء</string>
-    <string name="main_menu_header_next_azan_text">اذان بعدی: </string>
-    <string name="main_menu_header_today_text">امروز </string>
+    <string name="main_menu_header_next_azan_text">اذان بعدی </string>
+    <string name="main_menu_header_today_text">تاریخ امروز </string>
 
     <!--Activity Names-->
     <string name="app_Description">توضیحات</string>
@@ -90,7 +90,7 @@
     <string name="menu_zekr_shomar">ذکر شمار</string>
     <string name="menu_compass">قبله نما</string>
     <string name="menu_settings">تنظیمات</string>
-    <string name="menu_change_date">تبدیل تاریخ ها</string>
+    <string name="menu_change_date">تبدیل تاریخ</string>
     <string name="menu_send_program">ارسال برنامه</string>
     <string name="menu_about_us">درباره ما</string>
 
@@ -117,7 +117,7 @@
     <string name="month">ماه</string>
     <string name="day">روز</string>
     <string name="select_year">گزینش سال</string>
-    <string name="select_mount">گزینش ماه</string>
+    <string name="select_month">گزینش ماه</string>
     <string name="select_day">گزینش روز</string>
     <string name="date_exception">تاریخ وارد شده اشتباه است!</string>
     <string name="select_type_date">گزینش گونهٔ تاریخ</string>
@@ -148,8 +148,7 @@
 
     <!--AboutUsActivity-->
     <string name="about_us_bottum_message">امیدواریم با نظرات و پیشنهادات خود ما را در خدمت رسانی بهتر یاری نمایید.</string>
-    <string name="about_us_description">آوای الهی، اپلیکیشنی برای مدیریت اوقات شرعی، پخش اذان و اعلام زمان باقیمانده تا وقت شرعی بعدی برای برنامه ریزی و اقامه نماز اول وقت می باشد.
-که البته فعلا قابل استفاده برای استان گلستان و بر پایه مذهب حنفی می باشد.</string>
+    <string name="about_us_description">آوای الهی، اپلیکیشنی برای مدیریت اوقات شرعی، پخش اذان و اعلام زمان باقیمانده تا وقت شرعی بعدی برای برنامه ریزی و اقامه نماز اول وقت می باشد.که البته فعلا قابل استفاده برای استان گلستان و بر پایه مذهب حنفی می باشد.</string>
     <string name="about_us_telegram">تلگرام برنامه</string>
     <string name="about_us_email">ایمیل برنامه</string>
     <string name="about_us_nazar">امتیاز به برنامه</string>

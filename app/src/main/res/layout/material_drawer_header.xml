@@ -20,10 +20,10 @@
             android:layout_height="@dimen/material_drawer_account_header_selected"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="@dimen/material_drawer_account_header_horizontal_bottom"
             android:layout_marginTop="@dimen/material_drawer_account_header_horizontal_top"
+            android:layout_marginBottom="@dimen/material_drawer_account_header_horizontal_bottom"
             android:clickable="false"
-            android:elevation="2dp" />
+            />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -52,87 +52,77 @@
             android:id="@+id/material_drawer_account_header_text_section"
             android:layout_width="match_parent"
             android:layout_height="56dp"
-            android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
             android:layout_marginBottom="@dimen/material_drawer_padding"
             android:layout_toLeftOf="@+id/material_drawer_account_header_text_switcher"
             android:gravity="center_vertical"
-            android:orientation="vertical"
-            android:paddingEnd="56dp"
+            android:orientation="horizontal"
+            android:paddingStart="0dp"
             android:paddingLeft="0dp"
-            android:paddingRight="56dp"
-            android:paddingStart="0dp">
+            android:paddingEnd="56dp"
+            android:paddingRight="56dp">
+
+            <TextView
+                android:id="@+id/material_drawer_account_header_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/material_drawer_account_header_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/material_drawer_account_header_name"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/material_drawer_account_header_next_azan"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:visibility="gone"/>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_weight="1"
-                    android:layout_marginLeft="60dp">
-
-                    <TextView
-                        android:id="@+id/material_drawer_account_header_next_azan"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="5:38:12"
-                        android:gravity="center"/>
-
-                    <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="1dp"
-                        android:src="@drawable/divider_header"
-                        android:layout_gravity="center"/>
-                </LinearLayout>
-
-
+                    android:gravity="center"
+                    android:text="5:38:12"
+                    android:textColor="@color/md_white_1000" />
 
                 <TextView
-                    android:id="@+id/material_drawer_account_header_name2"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/material_drawer_account_header_today"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/main_menu_header_next_azan_text"
-                    android:layout_marginLeft="30dp"/>
+                    android:layout_marginTop="5dp"
+                    android:gravity="center"
+                    android:text="5:38:12"
+                    android:textColor="@color/md_white_1000" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:orientation="horizontal">
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/material_drawer_account_header_email"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-                    <TextView
-                        android:id="@+id/material_drawer_account_header_today"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="5:38:12"
-                        android:gravity="center"
-                        android:layout_weight="1"
-                        android:layout_marginLeft="60dp"/>
+                    android:id="@+id/material_drawer_account_header_name2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:text="@string/main_menu_header_next_azan_text"
+                    android:textColor="@color/md_white_1000" />
 
                 <TextView
                     android:id="@+id/material_drawer_account_header_email2"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:gravity="right"
                     android:text="@string/main_menu_header_today_text"
-                    android:layout_marginLeft="30dp"/>
+                    android:textColor="@color/md_white_1000" />
 
             </LinearLayout>
 
@@ -142,7 +132,7 @@
             android:id="@+id/material_drawer_account_header_text_switcher"
             android:layout_width="@dimen/material_drawer_account_header_dropdown"
             android:layout_height="@dimen/material_drawer_account_header_dropdown"
-            android:visibility="gone"/>
+            android:visibility="gone" />
 
     </RelativeLayout>
 </FrameLayout>
