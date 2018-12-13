@@ -21,11 +21,12 @@
             android:orientation="vertical">
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="80dp"
+                android:layout_height="100dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="10dp"
-                app:srcCompat="@mipmap/ic_launcher_round" />
+                android:layout_marginTop="20dp"
+
+                app:srcCompat="@drawable/ic_avaye_elahi_logo" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -63,7 +64,8 @@
                 android:id="@+id/about_us_discription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="25dp"
+                android:paddingHorizontal="25dp"
+                android:paddingVertical="15dp"
                 android:text="@string/about_us_description" />
 
 

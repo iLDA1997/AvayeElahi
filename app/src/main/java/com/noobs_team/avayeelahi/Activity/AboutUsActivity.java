@@ -51,18 +51,22 @@ public class AboutUsActivity extends AppCompatActivity {
             if (v.getId() == R.id.about_us_telegram_layout) {
 
                 final String appName = "org.telegram.messenger";
+                final String appName2 = "com.hanista.mobogram";
                 final boolean isAppInstalled = isAppAvailable(getApplicationContext(), appName);
-                if (isAppInstalled) {
+                final boolean isAppInstalled2 = isAppAvailable(getApplicationContext(), appName2);
+                if (isAppInstalled || isAppInstalled2) {
                     intent = new Intent(Intent.ACTION_VIEW, Uri.parse("tg://resolve?domain=AvayeElahi"));
                     startActivity(intent);
-                } else {
+                }else {
                     Toast.makeText(getApplicationContext(),getText(R.string.about_us_toast_telegram), Toast.LENGTH_SHORT).show();
                 }
 
             }
             if (v.getId() == R.id.about_us_email_layout) {
+
+                String[] to = {"avayeelahi@gmail.com"};
                 intent = new Intent(Intent.ACTION_SEND);
-                intent.putExtra(Intent.EXTRA_EMAIL,"AvayeElahi@gmail.com");
+                intent.putExtra(Intent.EXTRA_EMAIL,to);
                 intent.putExtra(Intent.EXTRA_SUBJECT, getText(R.string.about_us_email_subject));
                 intent.putExtra(Intent.EXTRA_TEXT,"");
                 intent.setType("text/plain");

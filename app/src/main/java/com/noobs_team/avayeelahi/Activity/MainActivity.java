@@ -42,8 +42,8 @@ public class MainActivity extends AppCompatActivity {
     AccountHeader headerResult;
     TextView mainMenuHeaderToday, todayShamsi, todayMiladi, todayJalali;
     PersianCalendarHandler calendar;
-    PrayTime jDate;
-    PersianDate date;
+    //PrayTime jDate;
+    //PersianDate date;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
         volume5.setOnClickListener(mainOnClick);
         volume6.setOnClickListener(mainOnClick);
 
-        todayJalali.setText((int) jTime);
+        //todayJalali.setText((int) jTime);
 
         calendar = persianCalendarView.getCalendar();
         PersianDate today = calendar.getToday();
@@ -101,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
         PrimaryDrawerItem homeItem = new PrimaryDrawerItem()
                 .withIdentifier(1)
                 .withSelectedTextColor(Color.parseColor("#000000"))
-                .withSelectedColor(Color.parseColor("#FF83CEC6"))
+                .withSelectedColor(getResources().getColor(R.color.menuSelectedColor))
                 .withName(R.string.menu_home)
                 .withIcon(R.drawable.home);
 

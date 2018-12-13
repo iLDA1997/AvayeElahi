@@ -14,6 +14,7 @@
     <color name="textColor">#000000</color>
     <color name="textTitleColor">#ffffff</color>
     <color name="accountHeaderColor">#0984e3</color>
+    <color name="menuSelectedBackground">#004a84</color>
 
     <color name="gheblehNamaBackground">#FF009A45</color>
     <color name="menuSelectedColor">#FF83CEC6</color>
