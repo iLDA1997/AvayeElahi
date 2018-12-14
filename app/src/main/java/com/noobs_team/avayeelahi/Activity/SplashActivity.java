@@ -6,13 +6,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.noobs_team.avayeelahi.R;
 
 public class SplashActivity extends Activity implements Animation.AnimationListener {
-    Animation animFadeIn;
-    LinearLayout linearLayout;
+    Animation animationFadeOut;
+    ImageView splash;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,14 +21,14 @@ public class SplashActivity extends Activity implements Animation.AnimationListe
         setContentView(R.layout.activity_splash);
 
         // load the animation
-        animFadeIn = AnimationUtils.loadAnimation(getApplicationContext(), R.animator.animation_fade_out);
+        animationFadeOut = AnimationUtils.loadAnimation(getApplicationContext(), R.animator.animation_fade_out);
         // set animation listener
-        animFadeIn.setAnimationListener(this);
+        animationFadeOut.setAnimationListener(this);
         // animation for image
-        linearLayout = (LinearLayout) findViewById(R.id.layout_linear);
+        splash = findViewById(R.id.splash);
         // start the animation
-        linearLayout.setVisibility(View.VISIBLE);
-        linearLayout.startAnimation(animFadeIn);
+        splash.setVisibility(View.VISIBLE);
+        splash.startAnimation(animationFadeOut);
     }
 
     @Override

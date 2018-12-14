@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
                 .withHeaderBackground(R.color.accountHeaderColor)
                 .withDividerBelowHeader(true)
                 .addProfiles( new ProfileDrawerItem()
-                        .withIcon(R.drawable.ic_avaye_elahi_logo_circle))
+                        .withIcon(R.drawable.ic_launcher))
                 .withSelectionListEnabled(false)
                 .withProfileImagesClickable(false)
                 .build();
