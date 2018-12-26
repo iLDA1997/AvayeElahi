@@ -22,7 +22,6 @@ public class AboutUsActivity extends AppCompatActivity {
     LinearLayout layoutEmail;
     LinearLayout layoutStar;
     Intent intent;
-    TextView discription;
 
 
     @Override

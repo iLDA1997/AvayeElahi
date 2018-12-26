@@ -18,15 +18,15 @@
             android:layout_below="@id/toolbar_about_us"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@color/md_blue_400"
             android:orientation="vertical">
 
             <ImageView
-                android:layout_width="80dp"
+                android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp"
-
-                app:srcCompat="@drawable/ic_avaye_elahi_logo" />
+                app:srcCompat="@drawable/ic_launcher" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -83,7 +83,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@drawable/border1"
+                    android:background="@drawable/border"
                     android:orientation="vertical">
 
                     <LinearLayout
@@ -103,6 +103,7 @@
                             android:layout_height="match_parent"
                             android:textStyle="bold"
                             android:padding="10dp"
+                            android:textColor="@color/md_white_1000"
                             android:gravity="center_vertical"
                             android:text="@string/about_us_telegram" />
 
@@ -132,7 +133,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@drawable/border2"
+                    android:background="@drawable/border"
                     android:orientation="vertical">
 
                     <LinearLayout
@@ -144,6 +145,7 @@
                             android:layout_width="40dp"
                             android:layout_height="40dp"
                             android:layout_marginLeft="10dp"
+                            android:color="@color/md_white_1000"
                             android:layout_gravity="center_vertical"
                             android:background="@drawable/email" />
 
@@ -152,6 +154,7 @@
                             android:layout_height="match_parent"
                             android:padding="10dp"
                             android:textStyle="bold"
+                            android:textColor="@color/md_white_1000"
                             android:gravity="center_vertical"
                             android:text="@string/about_us_email" />
 
@@ -181,7 +184,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@drawable/border3"
+                    android:background="@drawable/border"
                     android:orientation="vertical">
 
                     <LinearLayout
@@ -201,6 +204,7 @@
                             android:layout_height="match_parent"
                             android:padding="10dp"
                             android:textStyle="bold"
+                            android:textColor="@color/md_white_1000"
                             android:gravity="center_vertical"
                             android:text="@string/about_us_nazar" />
 
@@ -218,14 +222,23 @@
         </LinearLayout>
 
         <TextView
+            android:id="@+id/bottom_tv_about_us"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:layout_alignParentStart="true"
-            android:background="#4de242"
+            android:background="#74b8fe"
             android:gravity="center"
             android:padding="10dp"
             android:text="@string/about_us_bottum_message"
             android:textColor="#000000" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignTop="@id/bottom_tv_about_us"
+        android:background="#74ffffff"
+        android:orientation="vertical">
+
+    </LinearLayout>
 
     </RelativeLayout>

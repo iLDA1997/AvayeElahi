@@ -43,7 +43,7 @@
                 android:layout_height="45dp"
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="5dp"
-                android:src="@drawable/ic_avaye_elahi_logo_circle" />
+                android:src="@drawable/ic_launcher" />
 
         </LinearLayout>
 
