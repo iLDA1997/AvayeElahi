@@ -1,4 +1,4 @@
-package com.noobs_team.avayeelahi.Activity.Time;
+package com.noobs_team.avayeelahi.Utils;
 
 import android.annotation.SuppressLint;
 import java.io.Serializable;

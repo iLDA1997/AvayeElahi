@@ -81,6 +81,8 @@
                         android:id="@+id/today_shamsi"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:textSize="16sp"
                         android:layout_weight="1"
                         android:text="1397/08/18" />
 

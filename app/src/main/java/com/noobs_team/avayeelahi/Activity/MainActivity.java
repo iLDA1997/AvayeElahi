@@ -25,10 +25,19 @@ import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 import com.noobs_team.avayeelahi.R;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import ir.mirrajabi.persiancalendar.PersianCalendarView;
 import ir.mirrajabi.persiancalendar.core.PersianCalendarHandler;
 import ir.mirrajabi.persiancalendar.core.models.PersianDate;
-import com.noobs_team.avayeelahi.Time.PrayTime;
+
+import com.noobs_team.avayeelahi.Utils.DateConverterUtil;
+
+import org.joda.time.Chronology;
+import org.joda.time.LocalDate;
+import org.joda.time.chrono.ISOChronology;
+import org.joda.time.chrono.IslamicChronology;
 
 import static android.provider.ContactsContract.Directory.PACKAGE_NAME;
 
@@ -42,8 +51,6 @@ public class MainActivity extends AppCompatActivity {
     AccountHeader headerResult;
     TextView mainMenuHeaderToday, todayShamsi, todayMiladi, todayJalali;
     PersianCalendarHandler calendar;
-    //PrayTime jDate;
-    //PersianDate date;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,8 +82,6 @@ public class MainActivity extends AppCompatActivity {
         volume5.setOnClickListener(mainOnClick);
         volume6.setOnClickListener(mainOnClick);
 
-        //todayJalali.setText((int) jTime);
-
         calendar = persianCalendarView.getCalendar();
         PersianDate today = calendar.getToday();
         String dayAndMonth = calendar.getWeekDayName(today)
@@ -84,7 +89,30 @@ public class MainActivity extends AppCompatActivity {
                 + " " + calendar.getMonthName(today)
                 + " " + calendar.formatNumber(today.getYear());
         mainMenuHeaderToday.setText(dayAndMonth);
-    }
+
+        //show julian date
+        todayShamsi.setText(calendar.formatNumber(today.getYear())
+                + " - " + calendar.formatNumber(today.getMonth())
+                + " - " + calendar.formatNumber(today.getDayOfMonth()));
+
+        //show gregorian date
+        SimpleDateFormat miladiDate = new SimpleDateFormat("yyyy-MM-dd");
+        todayMiladi.setText(miladiDate.format(new Date()));
+
+        //show hijri date
+        DateConverterUtil converter = new DateConverterUtil();
+        converter.persianToGregorian(today.getYear(), today.getMonth(), today.getDayOfMonth());
+        int year  = converter.getYear();
+        int month = converter.getMonth();
+        int day   = converter.getDay();
+
+        Chronology iso = ISOChronology.getInstanceUTC();
+        Chronology hijri = IslamicChronology.getInstanceUTC();
+
+        LocalDate todayIso = new LocalDate(converter.getYear(), converter.getMonth(), converter.getDay(), iso);
+        LocalDate todayHijri = new LocalDate(todayIso.toDateTimeAtStartOfDay(), hijri);
+        todayJalali.setText(String.valueOf(todayHijri));
+        }
 
     private void setupDrawer(MainActivity mainActivity) {
 
@@ -236,7 +264,7 @@ public class MainActivity extends AppCompatActivity {
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(MainActivity.this);
 
         alertDialogBuilder.setTitle(R.string.app_name_fa);
-        alertDialogBuilder.setIcon(R.mipmap.ic_launcher_round);
+        alertDialogBuilder.setIcon(R.drawable.ic_launcher);
 
         alertDialogBuilder
                 .setMessage(R.string.dialog_message)
