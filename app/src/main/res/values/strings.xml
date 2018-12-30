@@ -16,6 +16,7 @@
     <string name="main_azan_eshaa">عشاء</string>
     <string name="main_menu_header_next_azan_text">اذان بعدی </string>
     <string name="main_menu_header_today_text">تاریخ امروز </string>
+    <string name="main_location">مکان</string>
 
     <!--Activity Names-->
     <string name="app_Description">توضیحات</string>
