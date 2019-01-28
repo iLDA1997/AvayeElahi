@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#59b033"
+    android:background="#009ff5"
     android:orientation="vertical"
     tools:context=".Activity.CalendarActivity">
 
@@ -91,8 +91,8 @@
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
             android:layout_weight="1"
-            app:pcv_colorBackground="#59b033"
-            app:pcv_colorDayName="#00650b"
+            app:pcv_colorBackground="#FF009FF5"
+            app:pcv_colorDayName="#00277b"
             app:pcv_colorHoliday="#ff0e06"
             app:pcv_colorHolidaySelected="#f1f2f3"
             app:pcv_colorNormalDay="#1d1d1d"

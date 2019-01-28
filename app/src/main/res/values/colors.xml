@@ -15,8 +15,11 @@
     <color name="textTitleColor">#ffffff</color>
     <color name="accountHeaderColor">#0984e3</color>
     <color name="menuSelectedBackground">#004a84</color>
+    <color name="backgroundGuidance">#46cdff</color>
+    <color name="backgroundGuidanceText">#b6ebff</color>
+    <color name="scroll_color">#2142ff</color>
 
-    <color name="gheblehNamaBackground">#FF009A45</color>
+    <color name="gheblehNamaBackground">#0076d1</color>
     <color name="menuSelectedColor">#FF83CEC6</color>
 
     <color name="bg_group_item_normal_state">#ffddffdd</color>
@@ -27,7 +30,7 @@
     <color name="expandable_item_indicator_color">#42000000</color>
     <color name="bg_swipe_item_neutral">@android:color/transparent</color>
 
-    <color name="calendarTopButton">#76FF03</color>
+    <color name="calendarTopButton">#46cdff</color>
     <color name="calendarTopDefaultButton">#d6d7d7</color>
 
     <color name="iconColor">#33b5e5</color>

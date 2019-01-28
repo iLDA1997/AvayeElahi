@@ -173,7 +173,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="2"
                         android:gravity="center"
-                        android:text="05 : 38 : 12" />
+                        android:text="02 : 34 : 11" />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -210,7 +210,7 @@
                         android:layout_gravity="center_vertical"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="05 : 38 : 12" />
+                        android:text="05 : 23" />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -251,7 +251,7 @@
                         android:layout_gravity="center_vertical"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="05 : 38 : 12" />
+                        android:text="06 : 54" />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -292,7 +292,7 @@
                         android:layout_gravity="center_vertical"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="05 : 38 : 12" />
+                        android:text="11 : 41" />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -333,7 +333,7 @@
                         android:layout_gravity="center_vertical"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="05 : 38 : 12" />
+                        android:text="14 : 14" />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -374,7 +374,7 @@
                         android:layout_gravity="center_vertical"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="05 : 38 : 12" />
+                        android:text="16 : 53" />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -415,7 +415,7 @@
                         android:layout_gravity="center_vertical"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="05 : 38 : 12" />
+                        android:text="17 : 44" />
 
                     <TextView
                         android:layout_width="match_parent"

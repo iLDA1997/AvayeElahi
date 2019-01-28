@@ -17,6 +17,7 @@
 
     <ListView
         android:id="@+id/holiday_list"
+        android:scrollbarThumbVertical="@color/scroll_color"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:divider="@drawable/divider">
