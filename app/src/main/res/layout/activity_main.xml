@@ -35,12 +35,13 @@
                 android:layout_weight="1"
                 android:gravity="center_vertical"
                 android:text="@string/app_name_fa"
+                android:textStyle="bold"
                 android:textColor="@color/textTitleColor"
                 android:textSize="@dimen/toolbarTitleSize" />
 
             <ImageView
-                android:layout_width="45dp"
-                android:layout_height="45dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="5dp"
                 android:src="@drawable/ic_launcher" />
@@ -87,7 +88,7 @@
                         android:layout_weight="1"
                         android:gravity="left"
                         android:text="1397/08/18"
-                        android:textSize="16sp" />
+                        android:textSize="16sp"/>
 
                     <TextView
                         android:layout_width="wrap_content"

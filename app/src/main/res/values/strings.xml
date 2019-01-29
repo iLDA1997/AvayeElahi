@@ -64,7 +64,9 @@
     <!--CompassActivity-->
     <string name="compass_top_text">دستگاه شما فاقد قطب نما می باشد!</string>
     <string name="compass_bottom_back">بازگشت</string>
-    <string name="compass_bottom_guidance">راهنما</string>
+    <string name="compass_top_guidance">راهنما</string>
+    <string name="compass_guidance">راهنمای قبله نما</string>
+
     <string name="DirEast">شرق</string>
     <string name="DirWest">غرب</string>
     <string name="DirNorth">شمال</string>
