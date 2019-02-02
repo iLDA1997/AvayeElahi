@@ -4,6 +4,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
+import android.provider.Settings;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -109,7 +110,8 @@ public class MainActivity extends AppCompatActivity {
         Chronology iso = ISOChronology.getInstanceUTC();
         Chronology hijri = IslamicChronology.getInstanceUTC();
 
-        LocalDate todayIso = new LocalDate(converter.getYear(), converter.getMonth(), converter.getDay(), iso);
+        LocalDate todayIso = new LocalDate(converter.getYear(),
+                converter.getMonth(), converter.getDay(), iso);
         LocalDate todayHijri = new LocalDate(todayIso.toDateTimeAtStartOfDay(), hijri);
         todayJalali.setText(String.valueOf(todayHijri));
         }
@@ -223,7 +225,6 @@ public class MainActivity extends AppCompatActivity {
                 settingsItem,
                 aboutUsItem
                 //linkProgramItem
-
         )
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
                     @Override
@@ -231,22 +232,30 @@ public class MainActivity extends AppCompatActivity {
                         if (drawerItem != null) {
                             Intent intent = null;
                             if (drawerItem.getIdentifier() == 10) {
-                                intent = new Intent(MainActivity.this, AboutUsActivity.class);
+                                intent = new Intent
+                                        (MainActivity.this, AboutUsActivity.class);
                             } else if (drawerItem.getIdentifier() == 7) {
-                                intent = new Intent(MainActivity.this, CompassActivity.class);
+                                intent = new Intent
+                                        (MainActivity.this, CompassActivity.class);
                             } else if (drawerItem.getIdentifier() == 6) {
-                                intent = new Intent(MainActivity.this, ZekrShomarActivity.class);
+                                intent = new Intent
+                                        (MainActivity.this, ZekrShomarActivity.class);
                             } else if (drawerItem.getIdentifier() == 5) {
-                                intent = new Intent(MainActivity.this, TasbihActivity.class);
+                                intent = new Intent
+                                        (MainActivity.this, TasbihActivity.class);
                             } else if (drawerItem.getIdentifier() == 9) {
-                                intent = new Intent(MainActivity.this, ChangeDateActivity.class);
+                                intent = new Intent
+                                        (MainActivity.this, ChangeDateActivity.class);
                             } else if (drawerItem.getIdentifier() == 2) {
-                                intent = new Intent(MainActivity.this, AsmaAllahActivity.class);
+                                intent = new Intent
+                                        (MainActivity.this, AsmaAllahActivity.class);
                             } else if (drawerItem.getIdentifier() == 4) {
-                                intent = new Intent(MainActivity.this, AzkarRouzanehActivity.class);
-                            }
-
-                            if (intent != null) {
+                                intent = new Intent
+                                        (MainActivity.this, AzkarRouzanehActivity.class);
+                            } else if (drawerItem.getIdentifier() == 8) {
+                                intent = new Intent
+                                        (MainActivity.this, SettingActivity.class);
+                            } if (intent != null) {
                                 MainActivity.this.startActivity(intent);
                             }
                             return false;

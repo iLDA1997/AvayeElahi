@@ -158,7 +158,6 @@
     <string name="about_us_toast_telegram">تلگرام وجود ندارد!</string>
     <string name="about_us_email_chooser">Choose Mail App</string>
     <string name="about_us_email_subject">انتقاد یا پیشنهاد به برنامه</string>
-    <string name="title_activity_settings">Settings</string>
     <string name="guide_text1">باید توجه داشته باشید که در بسیاری از مواقع، سنسور قطب نمای گوشی، کالیبر نیست و ممکن است در تشخیص شمال و جنوب اشتباه کند. برای کالیبره کردن سنسور قطب نما، گوشی را به حالت ۸ انگلیسی (8) در هوا حرکت دهید، تا سنسور قطب نما تنظیم شود.</string>
     <string name="guide_text2">روش استفاده از قبله نما</string>
     <string name="guide_text3">اگر گوشی شما دارای سنسورهای لازم باشد تصویر قبله نما با گردش گوشی شروع به چرخش می کند
@@ -185,5 +184,11 @@
     <string name="calendar_top_button_rouzaneh_text">روزانه</string>
     <string name="calendar_non_event">هیچ رویدادی وجود ندارد.</string>
 
+    <!--SettingActivity-->
+    <string name="setting_default">بازگردانی به تنظیمات پیش فرض</string>
+    <string name="setting_dialog_restore">بازنشانی</string>
+    <string name="setting_dialog_message">آیا میخواهید تنظیمات را به حالت پیش فرض برگردانید؟</string>
+    <string name="setting_dialog_toast">با موفقیت انجام شد!</string>
+    <string name="setting_show_notification">نمایش اعلان</string>
 
 </resources>

@@ -2,8 +2,7 @@
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="android:colorControlActivated" tools:targetApi="lollipop">#ffa70b</item>
-        <item name="colorControlActivated">#ffa70b</item>
+        <item name="colorControlActivated">#008EE8</item>
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>

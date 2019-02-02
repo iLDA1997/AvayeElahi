@@ -6,8 +6,7 @@
 
     <color name="menuBackground">#F5F5F5</color>
     <color name="activitySplashAccent">#ffffff</color>
-    <color name="colorBackgroundSplash">#ff076800</color>
-    <color name="SpaceColor">#b4b4b4</color>
+    <color name="SpaceColor">#ACACAC</color>
 
 
     <color name="textPrimary">#000000</color>
