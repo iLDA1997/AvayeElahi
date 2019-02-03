@@ -1,11 +1,11 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion 28
     defaultConfig {
         applicationId "com.noobs_team.avayeelahi"
         minSdkVersion 19
-        targetSdkVersion 27
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
         vectorDrawables.useSupportLibrary = true
@@ -20,24 +20,24 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support:appcompat-v7:28.0.0'
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
-    implementation 'com.android.support:recyclerview-v7:27.1.1'
+    implementation 'com.android.support:recyclerview-v7:28.0.0'
     implementation 'com.android.support:support-annotations:28.0.0'
-    implementation 'com.android.support:design:27.1.1'
+    implementation 'com.android.support:design:28.0.0'
 
     // Material Drawer
     implementation('com.mikepenz:materialdrawer:5.9.2@aar') { transitive = true }
     implementation 'com.mikepenz:fontawesome-typeface:4.7.0.1@aar'
 
-    implementation 'com.android.support:support-v4:27.1.1'
-    implementation 'com.android.support:support-vector-drawable:27.1.1'
+    implementation 'com.android.support:support-v4:28.0.0'
+    implementation 'com.android.support:support-vector-drawable:28.0.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
     // RTL Toolbar
     implementation 'com.blackgoblin.rtltoolbar:rtltoolbar:1.0.0'
     //progressBar
     implementation 'devlight.io:arcprogressstackview:1.0.4'
-    implementation 'com.android.support:cardview-v7:27.1.1'
+    implementation 'com.android.support:cardview-v7:28.0.0'
     implementation('com.h6ah4i.android.widget.advrecyclerview:advrecyclerview:0.11.0@aar') {
         transitive = true
     }

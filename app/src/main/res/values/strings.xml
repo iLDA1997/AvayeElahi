@@ -190,5 +190,9 @@
     <string name="setting_dialog_message">آیا میخواهید تنظیمات را به حالت پیش فرض برگردانید؟</string>
     <string name="setting_dialog_toast">با موفقیت انجام شد!</string>
     <string name="setting_show_notification">نمایش اعلان</string>
+    <string name="setting_alert_and_azan">مدیریت اذان و هشدار ها</string>
+    <string name="setting_prayer_one">تنظیمات اذان صبح</string>
+    <string name="setting_play_alert">پخش هشدار</string>
+    <string name="setting_play_azan">پخش اذان</string>
 
 </resources>
