@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/backgroundGuidanceText"
+    android:background="@color/backgroundGuidance"
     tools:context=".Activity.SettingActivity">
 
     <com.blackgoblin.rtltoolbar.RtlToolbar
@@ -57,21 +57,21 @@
             <Switch
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:switchPadding="10dp"
                 android:layout_marginRight="5dp"
                 android:gravity="center_vertical"
-                android:text="@string/setting_show_notification"/>
+                android:switchPadding="10dp"
+                android:text="@string/setting_show_notification" />
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:src="@drawable/divider_setting"/>
+                android:src="@drawable/divider_setting" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:gravity="center_vertical"
                 android:layout_marginRight="10dp"
+                android:gravity="center_vertical"
                 android:orientation="horizontal">
 
                 <Spinner
@@ -84,84 +84,112 @@
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
                     android:layout_marginRight="15dp"
-                    android:gravity="center_vertical"
                     android:layout_weight="1"
-                    android:text="استان"/>
+                    android:gravity="center_vertical"
+                    android:text="استان" />
 
                 <ImageView
                     android:layout_width="38dp"
                     android:layout_height="38dp"
                     android:layout_gravity="center_vertical"
-                    android:src="@drawable/setting_city"/>
+                    android:src="@drawable/setting_city" />
 
             </LinearLayout>
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:src="@drawable/divider_setting"/>
+                android:src="@drawable/divider_setting" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:gravity="center_vertical"
                 android:layout_marginRight="10dp"
+                android:gravity="center_vertical"
                 android:orientation="horizontal">
 
                 <Spinner
                     android:id="@+id/spinner_city"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:gravity="center_vertical"/>
+                    android:gravity="center_vertical" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
                     android:layout_marginRight="15dp"
-                    android:gravity="center_vertical"
                     android:layout_weight="1"
-                    android:text="شهر"/>
+                    android:gravity="center_vertical"
+                    android:text="شهر" />
 
                 <ImageView
                     android:layout_width="38dp"
                     android:layout_height="38dp"
                     android:layout_gravity="center_vertical"
-                    android:src="@drawable/setting_city"/>
+                    android:src="@drawable/setting_city" />
 
             </LinearLayout>
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:src="@drawable/divider_setting"/>
+                android:src="@drawable/divider_setting" />
 
             <LinearLayout
+                android:id="@+id/setting_alert_and_azan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="10dp"
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/setting_default"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginRight="15dp"
-                    android:gravity="center_vertical"
                     android:layout_weight="1"
-                    android:text="@string/setting_default"/>
+                    android:gravity="center_vertical"
+                    android:text="@string/setting_alert_and_azan" />
 
                 <ImageView
                     android:layout_width="38dp"
                     android:layout_height="38dp"
                     android:layout_gravity="center_vertical"
-                    android:src="@drawable/setting_restore"/>
+                    android:src="@drawable/setting_alert" />
 
             </LinearLayout>
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:src="@drawable/divider_setting"/>
+                android:src="@drawable/divider_setting" />
+
+            <LinearLayout
+                android:id="@+id/setting_default"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="@string/setting_default" />
+
+                <ImageView
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/setting_restore" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:src="@drawable/divider_setting" />
 
         </LinearLayout>
 

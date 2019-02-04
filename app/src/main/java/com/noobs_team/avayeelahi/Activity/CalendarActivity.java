@@ -58,7 +58,8 @@ public class CalendarActivity extends AppCompatActivity {
         calendarForwardButton.setOnClickListener(clickListener);
         calendarBackButton.setOnClickListener(clickListener);
 
-        dayAndMonth = calendar.getWeekDayName(today) + " " + calendar.formatNumber(today.getDayOfMonth())
+        dayAndMonth = calendar.getWeekDayName(today)
+                + " " + calendar.formatNumber(today.getDayOfMonth())
                 + " " + calendar.getMonthName(today) + " ";
         calendarDayAndMonth.setText(dayAndMonth);
         calendarYear.setText(calendar.formatNumber(today.getYear()));
@@ -93,13 +94,18 @@ public class CalendarActivity extends AppCompatActivity {
         persianCalendarView.setOnDayClickedListener(new OnDayClickedListener() {
             @Override
             public void onClick(PersianDate date) {
-                if (calendar.getAllEventsForDay(today).size()==0){
+                if (calendar.getAllEventsForDay(date).size()==0){
                     eventText.setText(getResources().getString(R.string.calendar_non_event));
                 }
                 else {
                     for(CalendarEvent event : calendar.getAllEventsForDay(date))
                         eventText.setText(event.getTitle());
                 }
+                dayAndMonth = calendar.getWeekDayName(date)
+                        + " " + calendar.formatNumber(date.getDayOfMonth())
+                        + " " + calendar.getMonthName(today) + " ";
+                calendarDayAndMonth.setText(dayAndMonth);
+                calendarYear.setText(calendar.formatNumber(date.getYear()));
             }
         });
 
@@ -109,11 +115,9 @@ public class CalendarActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
             if (v.getId() == R.id.calendar_come_back) {
-                dayAndMonth = calendar.getWeekDayName(today) + " " + calendar.formatNumber(today.getDayOfMonth())
-                        + " " + calendar.getMonthName(today) + " ";
+                persianCalendarView.goToToday();
                 calendarDayAndMonth.setText(dayAndMonth);
                 calendarYear.setText(calendar.formatNumber(today.getYear()));
-                persianCalendarView.update();
 
                 if (calendar.getAllEventsForDay(today).size()==0){
                     eventText.setText(getResources().getString(R.string.calendar_non_event));

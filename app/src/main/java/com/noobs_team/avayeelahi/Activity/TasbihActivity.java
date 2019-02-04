@@ -1,18 +1,21 @@
 package com.noobs_team.avayeelahi.Activity;
 
-        import android.graphics.Color;
-        import android.support.v7.app.AppCompatActivity;
-        import android.os.Bundle;
-        import android.view.View;
-        import android.widget.Button;
-        import android.widget.TextView;
-        import android.widget.Toolbar;
+import android.graphics.Color;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.widget.Toolbar;
 
-        import com.noobs_team.avayeelahi.R;
+import com.noobs_team.avayeelahi.R;
 
-        import java.util.ArrayList;
+import java.util.ArrayList;
+import java.util.Objects;
 
-        import devlight.io.library.ArcProgressStackView;
+import devlight.io.library.ArcProgressStackView;
 
 public class TasbihActivity extends AppCompatActivity {
 
@@ -40,6 +43,11 @@ public class TasbihActivity extends AppCompatActivity {
     private int[] mEndColors = new int[MODEL_COUNT];
     // First full size of APSV
     private int mFullSize = -1;
+    private LinearLayout bgLayoutSobhan;
+    private LinearLayout bgLayoutAlhamd;
+    private LinearLayout bgLayoutAllah;
+    private ImageView dvRight;
+    private ImageView dvLeft;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,12 +56,18 @@ public class TasbihActivity extends AppCompatActivity {
         toolbarTasbih = findViewById(R.id.toolbar_tasbih);
         toolbarTasbih.setTitle(R.string.app_activity_tasbih);
         setSupportActionBar(toolbarTasbih);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         toolbarTasbih.setTitleTextColor(getResources().getColor(R.color.textTitleColor));
 
         topTextAllaho = findViewById(R.id.top_text_allaho);
         topTextAlhamdo = findViewById(R.id.top_text_alhamdo);
         topTextSobhan = findViewById(R.id.top_text_sobhan);
+
+        bgLayoutSobhan = findViewById(R.id.bg_layout_sobhan);
+        bgLayoutAlhamd = findViewById(R.id.bg_layout_alhamd);
+        bgLayoutAllah = findViewById(R.id.bg_layout_allah);
+        dvLeft = findViewById(R.id.dv_left);
+        dvRight = findViewById(R.id.dv_right);
 
         btnTasbihCounter = findViewById(R.id.btn_tasbih_counter);
         btnTasbihRefresh = findViewById(R.id.btn_tasbih_refresh);
@@ -72,9 +86,12 @@ public class TasbihActivity extends AppCompatActivity {
         }
         // Set models
         final ArrayList<ArcProgressStackView.Model> models = new ArrayList<>();
-        models.add(new ArcProgressStackView.Model("الله اکبر", 0, Color.parseColor(bgColors[0]), mStartColors[0]));
-        models.add(new ArcProgressStackView.Model("الحمدلله", 0, Color.parseColor(bgColors[1]), mStartColors[1]));
-        models.add(new ArcProgressStackView.Model("سبحان الله", 1, Color.parseColor(bgColors[2]), mStartColors[2]));
+        models.add(new ArcProgressStackView.Model("الله اکبر", 0,
+                Color.parseColor(bgColors[0]), mStartColors[0]));
+        models.add(new ArcProgressStackView.Model("الحمدلله", 0,
+                Color.parseColor(bgColors[1]), mStartColors[1]));
+        models.add(new ArcProgressStackView.Model("سبحان الله", 1,
+                Color.parseColor(bgColors[2]), mStartColors[2]));
         mArcProgressStackView.setModels(models);
 
         btnTasbihCounter.setOnClickListener(click);
@@ -92,6 +109,11 @@ public class TasbihActivity extends AppCompatActivity {
                     endTasbih = true;
                     btnTasbihCounter.setText("✔");
                     topTextAllaho.setText("34");
+                    bgLayoutSobhan.setBackground(getResources().getDrawable(R.drawable.border_sobhan));
+                    bgLayoutAlhamd.setBackground(getResources().getDrawable(R.drawable.border_alhamdo));
+                    bgLayoutAllah.setBackground(getResources().getDrawable(R.drawable.border_allaho));
+                    dvRight.setVisibility(View.GONE);
+                    dvLeft.setVisibility(View.GONE);
                 }
                 if (!endTasbih) {
                     if (m01) {
@@ -142,6 +164,27 @@ public class TasbihActivity extends AppCompatActivity {
                     }
 
                 }
+                if (count1 > 0 && count1 <= 99) {
+                    bgLayoutSobhan.setBackground(getResources().getDrawable(R.drawable.border_sobhan));
+                    bgLayoutAlhamd.setBackground(null);
+                    bgLayoutAllah.setBackground(null);
+                    dvRight.setVisibility(View.GONE);
+                    dvLeft.setVisibility(View.VISIBLE);
+                }
+                if (count2 > 1 && count2 <= 99) {
+                    bgLayoutAlhamd.setBackground(getResources().getDrawable(R.drawable.border_alhamdo));
+                    bgLayoutAllah.setBackground(null);
+                    bgLayoutSobhan.setBackground(null);
+                    dvRight.setVisibility(View.GONE);
+                    dvLeft.setVisibility(View.GONE);
+                }
+                if (count3 > 1 && count3 <= 99) {
+                    bgLayoutAllah.setBackground(getResources().getDrawable(R.drawable.border_allaho));
+                    bgLayoutAlhamd.setBackground(null);
+                    bgLayoutSobhan.setBackground(null);
+                    dvRight.setVisibility(View.VISIBLE);
+                    dvLeft.setVisibility(View.GONE);
+                }
             }
 
             if (v.getId() == R.id.btn_tasbih_refresh) {
@@ -168,6 +211,12 @@ public class TasbihActivity extends AppCompatActivity {
                 topTextAllaho.setText("0");
                 topTextAlhamdo.setText("0");
                 topTextSobhan.setText("0");
+                bgLayoutSobhan.setBackground(getResources().getDrawable(R.drawable.border_sobhan));
+                bgLayoutAlhamd.setBackground(null);
+                bgLayoutAllah.setBackground(null);
+                dvRight.setVisibility(View.GONE);
+                dvLeft.setVisibility(View.VISIBLE);
+
             }
 
             if (v.getId() == R.id.btn_tasbih_mines) {
@@ -241,17 +290,38 @@ public class TasbihActivity extends AppCompatActivity {
                     mode3 = mode3 - 1;
                     endTasbih = false;
                 }
+                if (count1 > 0 && count1 <= 99) {
+                    bgLayoutSobhan.setBackground(getResources().getDrawable(R.drawable.border_sobhan));
+                    bgLayoutAlhamd.setBackground(null);
+                    bgLayoutAllah.setBackground(null);
+                    dvRight.setVisibility(View.GONE);
+                    dvLeft.setVisibility(View.VISIBLE);
+                }
+                if (count2 > 1 && count2 <= 99) {
+                    bgLayoutAlhamd.setBackground(getResources().getDrawable(R.drawable.border_alhamdo));
+                    bgLayoutAllah.setBackground(null);
+                    bgLayoutSobhan.setBackground(null);
+                    dvRight.setVisibility(View.GONE);
+                    dvLeft.setVisibility(View.GONE);
+                }
+                if (count3 > 1 && count3 <= 99) {
+                    bgLayoutAllah.setBackground(getResources().getDrawable(R.drawable.border_allaho));
+                    bgLayoutAlhamd.setBackground(null);
+                    bgLayoutSobhan.setBackground(null);
+                    dvRight.setVisibility(View.VISIBLE);
+                    dvLeft.setVisibility(View.GONE);
+                }
             }
             if (v.getId() == R.id.btn_tasbih_volume) {
                 vulomeCount = vulomeCount + 1;
-                if (vulomeCount%2 == 1){
+                if (vulomeCount % 2 == 1) {
                     btnTasbihVolume.setText(R.string.tasbih_btn_volume_off);
                     btnTasbihCounter.setSoundEffectsEnabled(false);
                     btnTasbihVolume.setSoundEffectsEnabled(false);
                     btnTasbihMines.setSoundEffectsEnabled(false);
                     btnTasbihRefresh.setSoundEffectsEnabled(false);
                 }
-                if (vulomeCount%2 == 0) {
+                if (vulomeCount % 2 == 0) {
                     btnTasbihVolume.setText(R.string.tasbih_btn_volume_on);
                     btnTasbihCounter.setSoundEffectsEnabled(true);
                     btnTasbihVolume.setSoundEffectsEnabled(true);

@@ -19,14 +19,13 @@ public class CityDatabase extends SQLiteOpenHelper {
     private Context mContext;
     private SQLiteDatabase mDataBase;
 
-    public CityDatabase (Context context) {
+    public CityDatabase(Context context) {
         super(context, DB_NAME, null, 11);
 
         this.mContext = context;
         DB_PATH = "/data/data/" + context.getPackageName() + "/databases/";
         createDataBase();
     }
-
 
 
     public ArrayList<String> getOstan() {
@@ -59,7 +58,7 @@ public class CityDatabase extends SQLiteOpenHelper {
 
         if (open()) {
 
-            Cursor cursor = mDataBase.rawQuery("select name from city where province_id='"+id+"'", null);
+            Cursor cursor = mDataBase.rawQuery("select name from city where province_id='" + id + "'", null);
             if (!cursor.moveToFirst()) {
                 cursor.close();
                 close();
@@ -80,11 +79,11 @@ public class CityDatabase extends SQLiteOpenHelper {
     }
 
     public int getostanid(String name) {
-        int id=0;
+        int id = 0;
 
         if (open()) {
 
-            Cursor cursor = mDataBase.rawQuery("select id from province where name='"+name+"'", null);
+            Cursor cursor = mDataBase.rawQuery("select id from province where name='" + name + "'", null);
             if (!cursor.moveToFirst()) {
                 cursor.close();
                 close();
@@ -92,7 +91,7 @@ public class CityDatabase extends SQLiteOpenHelper {
 
                 do {
 
-                    id=(cursor.getInt(0));
+                    id = (cursor.getInt(0));
 
 
                 } while (cursor.moveToNext());
@@ -156,6 +155,7 @@ public class CityDatabase extends SQLiteOpenHelper {
 
         }
     }
+
     private boolean checkDataBase() {
         File dbFile = new File(DB_PATH + DB_NAME);
         return dbFile.exists();
@@ -163,13 +163,13 @@ public class CityDatabase extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String CREATE_TABLE="CREATE TABLE IF NOT EXISTS  city(" +
+        String CREATE_TABLE = "CREATE TABLE IF NOT EXISTS  city(" +
                 "[id] [int] NOT NULL," +
                 "[province_id] [int] NOT NULL," +
-                "[name] varchar(200) NOT NULL)" ;
+                "[name] varchar(200) NOT NULL)";
         db.execSQL(CREATE_TABLE);
 
-        CREATE_TABLE="INSERT INTO city ('id', 'province_id', 'name') VALUES" +
+        CREATE_TABLE = "INSERT INTO city ('id', 'province_id', 'name') VALUES" +
                 "(1, 1, 'آذر شهر')," +
                 "(2, 1, 'اسكو')," +
                 "(3, 1, 'اهر')," +
@@ -626,17 +626,14 @@ public class CityDatabase extends SQLiteOpenHelper {
 
         db.execSQL(CREATE_TABLE);
 
-
-
         CREATE_TABLE = "CREATE TABLE IF NOT EXISTS  province("
-                + "[ID] [int] NOT NULL,"+ "[name] [ntext] NULL )"
+                + "[ID] [int] NOT NULL," + "[name] [ntext] NULL )"
         ;
 
         db.execSQL(CREATE_TABLE);
 
 
-
-        CREATE_TABLE="INSERT INTO 'province' ('id', 'name') VALUES" +
+        CREATE_TABLE = "INSERT INTO 'province' ('id', 'name') VALUES" +
                 "(1, 'آذربايجان شرقي')," +
                 "(2, 'آذربايجان غربي')," +
                 "(3, 'اردبيل')," +
@@ -670,16 +667,11 @@ public class CityDatabase extends SQLiteOpenHelper {
                 "(31, 'يزد');";
 
         db.execSQL(CREATE_TABLE);
-
-
-
-
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + DB_NAME);
-
         onCreate(db);
     }
 }

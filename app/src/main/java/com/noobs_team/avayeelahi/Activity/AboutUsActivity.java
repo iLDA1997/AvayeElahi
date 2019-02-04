@@ -15,6 +15,8 @@ import android.widget.Toolbar;
 
 import com.noobs_team.avayeelahi.R;
 
+import java.util.Objects;
+
 public class AboutUsActivity extends AppCompatActivity {
 
     android.support.v7.widget.Toolbar toolbarAboutUs;
@@ -31,7 +33,7 @@ public class AboutUsActivity extends AppCompatActivity {
         toolbarAboutUs = findViewById(R.id.toolbar_about_us);
         toolbarAboutUs.setTitle(R.string.app_activity_about_us);
         setSupportActionBar(toolbarAboutUs);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         toolbarAboutUs.setTitleTextColor(getResources().getColor(R.color.textTitleColor));
 
         layoutTelegram = findViewById(R.id.about_us_telegram_layout);
@@ -51,9 +53,11 @@ public class AboutUsActivity extends AppCompatActivity {
 
                 final String appName = "org.telegram.messenger";
                 final String appName2 = "com.hanista.mobogram";
+                final String appName3 = "org.thunderdog.challegram";
                 final boolean isAppInstalled = isAppAvailable(getApplicationContext(), appName);
                 final boolean isAppInstalled2 = isAppAvailable(getApplicationContext(), appName2);
-                if (isAppInstalled || isAppInstalled2) {
+                final boolean isAppInstalled3 = isAppAvailable(getApplicationContext(), appName3);
+                if (isAppInstalled || isAppInstalled2 || isAppInstalled3) {
                     intent = new Intent(Intent.ACTION_VIEW, Uri.parse("tg://resolve?domain=Avaye_Elahi"));
                     startActivity(intent);
                 }else {

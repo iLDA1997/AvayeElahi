@@ -53,9 +53,11 @@
             android:name=".Activity.AzkarRouzanehActivity"
             android:parentActivityName=".Activity.MainActivity" />
         <activity android:name=".Activity.CalendarActivity" />
-        <activity android:name=".Activity.SettingActivity"
-            android:parentActivityName=".Activity.MainActivity"/>
-
+        <activity
+            android:name=".Activity.SettingActivity"
+            android:parentActivityName=".Activity.MainActivity" />
+        <activity android:name=".Activity.AlertAndAzan"
+            android:parentActivityName=".Activity.SettingActivity"/>
     </application>
 
 </manifest>

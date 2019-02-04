@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/backgroundGuidance"
     tools:context=".Activity.TasbihActivity">
 
     <com.blackgoblin.rtltoolbar.RtlToolbar
@@ -11,7 +12,8 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
-        android:elevation="15dp">
+        android:elevation="15dp"
+        tools:ignore="MissingConstraints">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -26,8 +28,8 @@
                 android:gravity="center_vertical"
                 android:text="@string/menu_tasbih"
                 android:textColor="@color/textTitleColor"
-                android:textStyle="bold"
-                android:textSize="@dimen/toolbarTitleSize" />
+                android:textSize="@dimen/toolbarTitleSize"
+                android:textStyle="bold" />
 
             <ImageView
                 android:layout_width="40dp"
@@ -40,140 +42,185 @@
 
     </com.blackgoblin.rtltoolbar.RtlToolbar>
 
-    <FrameLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="?attr/actionBarSize">
-
-        <LinearLayout
-            android:id="@+id/top_linear"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="15dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/tasbih_allaho_akbar"
-                android:textSize="22sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/tasbih_alhamdo_lellah"
-                android:textSize="22sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/tasbih_sobhan_allah"
-                android:textSize="22sp" />
-
-        </LinearLayout>
-
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar_tasbih"
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="45dp">
+            android:layout_marginStart="45dp"
+            android:layout_marginEnd="45dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/border_tasbih"
+            android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/top_text_allaho"
+            <LinearLayout
+                android:id="@+id/bg_layout_allah"
                 android:layout_width="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:layout_height="wrap_content"
+                android:padding="2dp"
+                android:orientation="vertical">
 
-                android:text="0"
-                android:textSize="22sp" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/tasbih_allaho_akbar"
+                    android:textSize="16sp" />
 
-            <TextView
-                android:id="@+id/top_text_alhamdo"
+                <TextView
+                    android:id="@+id/top_text_allaho"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/dv_left"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/divider_tasbih"/>
+
+            <LinearLayout
+                android:id="@+id/bg_layout_alhamd"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="0"
-                android:textSize="22sp" />
+                android:padding="2dp"
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/top_text_sobhan"
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/tasbih_alhamdo_lellah"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/top_text_alhamdo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/dv_right"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/divider_tasbih"/>
+
+            <LinearLayout
+                android:id="@+id/bg_layout_sobhan"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="0"
-                android:textSize="22sp" />
+                android:padding="2dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/tasbih_sobhan_allah"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/top_text_sobhan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
 
         </LinearLayout>
 
-        <devlight.io.library.ArcProgressStackView
-            android:id="@+id/apsv_tasbih"
-            android:layout_width="320dp"
-            android:layout_height="320dp"
-            android:layout_gravity="center"
-            app:apsv_animated="true"
-            app:apsv_dragged="false"
-            app:apsv_draw_width="45%"
-            app:apsv_indicator_orientation="horizontal"
-            app:apsv_leveled="false"
-            app:apsv_model_bg_enabled="true"
-            app:apsv_model_offset="0dp"
-            app:apsv_preview_colors="@array/polluted_waves"
-            app:apsv_rounded="true"
-            app:apsv_shadowed="false"
-            app:apsv_start_angle="270"
-            app:apsv_sweep_angle="360"
-            app:apsv_text_color="#00000000" />
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_gravity="center_horizontal">
+
+            <devlight.io.library.ArcProgressStackView
+                android:id="@+id/apsv_tasbih"
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:gravity="center"
+                app:apsv_animated="true"
+                app:apsv_dragged="false"
+                app:apsv_draw_width="45%"
+                app:apsv_indicator_orientation="horizontal"
+                app:apsv_leveled="false"
+                app:apsv_model_bg_enabled="true"
+                app:apsv_model_offset="0dp"
+                app:apsv_preview_colors="@array/polluted_waves"
+                app:apsv_rounded="true"
+                app:apsv_shadowed="false"
+                app:apsv_start_angle="270"
+                app:apsv_sweep_angle="360"
+                app:apsv_text_color="#00000000" />
+
+            <Button
+                android:id="@+id/btn_tasbih_counter"
+                style="@style/Base.DialogWindowTitleBackground.AppCompat"
+                android:layout_width="300dp"
+                android:layout_height="290dp"
+                android:gravity="center"
+                android:text="@string/tasbih_btn_counter"
+                android:textSize="50sp"
+                android:textStyle="bold" />
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="20dp"
+        android:layout_alignParentEnd="true"
+        android:orientation="horizontal">
 
         <Button
-            android:id="@+id/btn_tasbih_counter"
-            style="@style/Base.DialogWindowTitleBackground.AppCompat"
-            android:layout_width="250dp"
-            android:layout_height="250dp"
-            android:layout_gravity="center"
-            android:text="@string/tasbih_btn_counter"
-            android:textStyle="bold"
-            android:textSize="30sp" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
+            android:id="@+id/btn_tasbih_volume"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginBottom="35dp">
+            android:layout_weight="1"
 
-            <Button
-                android:id="@+id/btn_tasbih_volume"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
+            android:text="@string/tasbih_btn_volume_on"
+            tools:ignore="ButtonStyle" />
 
-                android:text="@string/tasbih_btn_volume_on"
-                tools:ignore="ButtonStyle" />
+        <Button
+            android:id="@+id/btn_tasbih_refresh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/tasbih_btn_refresh"
+            tools:ignore="ButtonStyle" />
 
-            <Button
-                android:id="@+id/btn_tasbih_refresh"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/tasbih_btn_refresh"
-                tools:ignore="ButtonStyle" />
+        <Button
+            android:id="@+id/btn_tasbih_mines"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/tasbih_btn_mines"
+            tools:ignore="ButtonStyle" />
 
-            <Button
-                android:id="@+id/btn_tasbih_mines"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/tasbih_btn_mines"
-                tools:ignore="ButtonStyle" />
+    </LinearLayout>
 
-        </LinearLayout>
-
-    </FrameLayout>
-
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>

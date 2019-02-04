@@ -11,15 +11,14 @@ import android.widget.TextView;
 import com.noobs_team.avayeelahi.R;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 import devlight.io.library.ArcProgressStackView;
 
 public class ZekrShomarActivity extends AppCompatActivity {
 
     public final static int MODEL_COUNT = 1;
-    private ArcProgressStackView mArcProgressStackView;
     private TextView topTextZekr;
-    private TextView topTextZekr2;
     int vulomeCount = 2;
     int zekrCounter = 0;
     private Button btnZekrCounter;
@@ -41,12 +40,10 @@ public class ZekrShomarActivity extends AppCompatActivity {
         toolbarZekrShomar = findViewById(R.id.toolbar_zekr_shomar);
         toolbarZekrShomar.setTitle(R.string.app_activity_zekr_shomar);
         setSupportActionBar(toolbarZekrShomar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         toolbarZekrShomar.setTitleTextColor(getResources().getColor(R.color.textTitleColor));
 
-
         topTextZekr = findViewById(R.id.top_text_zekr);
-        topTextZekr2 = findViewById(R.id.top_text_zekr2);
 
         btnZekrCounter = findViewById(R.id.btn_zekr_counter);
         btnZekrRefresh = findViewById(R.id.btn_zekr_refresh);
@@ -54,7 +51,7 @@ public class ZekrShomarActivity extends AppCompatActivity {
         btnZekrVolume = findViewById(R.id.btn_zekr_volume);
 
         // Get APSV
-        mArcProgressStackView = (ArcProgressStackView) findViewById(R.id.apsv_zekr);
+        ArcProgressStackView mArcProgressStackView = (ArcProgressStackView) findViewById(R.id.apsv_zekr);
         // Get colors
         final String[] startColors = getResources().getStringArray(R.array.polluted_waves);
         final String[] endColors = getResources().getStringArray(R.array.default_preview);
@@ -82,13 +79,13 @@ public class ZekrShomarActivity extends AppCompatActivity {
             if (v.getId() == R.id.btn_zekr_counter) {
                 zekrCounter = zekrCounter + 1;
                 btnZekrCounter.setText(zekrCounter + "");
-                topTextZekr2.setText(zekrCounter + "");
+                topTextZekr.setText(zekrCounter + "");
             }
 
             if (v.getId() == R.id.btn_zekr_refresh) {
                 zekrCounter = 0;
                 btnZekrCounter.setText(zekrCounter + "");
-                topTextZekr2.setText(zekrCounter + "");
+                topTextZekr.setText(zekrCounter + "");
             }
 
             if (v.getId() == R.id.btn_zekr_mines) {
@@ -96,7 +93,7 @@ public class ZekrShomarActivity extends AppCompatActivity {
                 if (zekrCounter<0)
                     zekrCounter=0;
                 btnZekrCounter.setText(zekrCounter + "");
-                topTextZekr2.setText(zekrCounter + "");
+                topTextZekr.setText(zekrCounter + "");
             }
             if (v.getId() == R.id.btn_zekr_volume) {
                 vulomeCount = vulomeCount + 1;
