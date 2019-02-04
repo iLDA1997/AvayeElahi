@@ -54,7 +54,7 @@ public class AboutUsActivity extends AppCompatActivity {
                 final boolean isAppInstalled = isAppAvailable(getApplicationContext(), appName);
                 final boolean isAppInstalled2 = isAppAvailable(getApplicationContext(), appName2);
                 if (isAppInstalled || isAppInstalled2) {
-                    intent = new Intent(Intent.ACTION_VIEW, Uri.parse("tg://resolve?domain=AvayeElahi"));
+                    intent = new Intent(Intent.ACTION_VIEW, Uri.parse("tg://resolve?domain=Avaye_Elahi"));
                     startActivity(intent);
                 }else {
                     Toast.makeText(getApplicationContext(),getText(R.string.about_us_toast_telegram), Toast.LENGTH_SHORT).show();

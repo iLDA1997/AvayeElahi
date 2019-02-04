@@ -12,7 +12,34 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
-        android:elevation="15dp" />
+        android:elevation="15dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="@string/menu_asma_khoda"
+                android:textColor="@color/textTitleColor"
+                android:textStyle="bold"
+                android:textSize="@dimen/toolbarTitleSize" />
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="5dp"
+                android:src="@drawable/ic_asma_allah" />
+
+        </LinearLayout>
+
+    </com.blackgoblin.rtltoolbar.RtlToolbar>
 
     <ImageView
         android:layout_width="match_parent"
@@ -23,11 +50,8 @@
         android:id="@+id/asma_allah_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/backgroundGuidanceText"
+        android:scrollbarThumbVertical="@color/scroll_color"
         android:divider="@drawable/divider"/>
-
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/divider"/>
 
 </LinearLayout>

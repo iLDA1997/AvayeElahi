@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/backgroundGuidance"
     tools:context=".Activity.GuidanceActivity">
 
     <com.blackgoblin.rtltoolbar.RtlToolbar
@@ -11,28 +11,125 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
-        android:elevation="15dp" />
+        android:elevation="15dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="@string/compass_guidance"
+                android:textColor="@color/textTitleColor"
+                android:textStyle="bold"
+                android:textSize="@dimen/toolbarTitleSize" />
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="5dp"
+                android:src="@drawable/ic_guidance" />
+
+        </LinearLayout>
+
+    </com.blackgoblin.rtltoolbar.RtlToolbar>
 
     <ScrollView
         android:id="@+id/guide_scroll"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:scrollbarThumbVertical="@color/scroll_color"
         android:layout_margin="@dimen/padddingGuidance"
-        android:layout_below="@id/toolbar_guidence"
-        android:shadowColor="#000000"
-        android:shadowDx="3"
-        android:shadowDy="3"
-        android:shadowRadius="15">
+        android:layout_below="@id/toolbar_guidence">
 
-        <TextView
-            android:id="@+id/guide_text"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#ffffff"
-            android:gravity="right"
-            android:padding="@dimen/padddingGuidance"
-            android:text="@string/guide_text"
-            />
+            android:layout_height="match_parent"
+            android:background="@color/backgroundGuidanceText"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:paddingTop="@dimen/padddingGuidance"
+                android:paddingHorizontal="@dimen/padddingGuidance"
+                android:text="@string/guide_text1" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:textSize="15sp"
+                android:paddingTop="@dimen/padddingGuidance"
+                android:paddingHorizontal="@dimen/padddingGuidance"
+                android:text="@string/guide_text2" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:paddingTop="@dimen/padddingGuidance"
+                android:paddingHorizontal="@dimen/padddingGuidance"
+                android:text="@string/guide_text3" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:textSize="15sp"
+                android:paddingTop="@dimen/padddingGuidance"
+                android:paddingHorizontal="@dimen/padddingGuidance"
+                android:text="@string/guide_text4" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:paddingHorizontal="@dimen/padddingGuidance"
+                android:paddingTop="@dimen/padddingGuidance"
+                android:text="@string/guide_text5" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:textSize="15sp"
+                android:paddingTop="@dimen/padddingGuidance"
+                android:paddingHorizontal="@dimen/padddingGuidance"
+                android:text="@string/guide_text6" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:paddingTop="@dimen/padddingGuidance"
+                android:paddingHorizontal="@dimen/padddingGuidance"
+                android:text="@string/guide_text7" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:textSize="15sp"
+                android:paddingTop="@dimen/padddingGuidance"
+                android:paddingHorizontal="@dimen/padddingGuidance"
+                android:text="@string/guide_text8" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:padding="@dimen/padddingGuidance"
+                android:text="@string/guide_text9" />
+
+        </LinearLayout>
 
     </ScrollView>
 

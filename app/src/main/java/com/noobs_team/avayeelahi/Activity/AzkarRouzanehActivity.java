@@ -41,7 +41,7 @@ public class AzkarRouzanehActivity extends AppCompatActivity {
         // get the listview
         expListView = (ExpandableListView) findViewById(R.id.lvExp);
 
-        expListView.setBackgroundColor(Color.parseColor("#a1ff97"));
+        expListView.setBackgroundColor(Color.parseColor("#00b2de"));
         // preparing list data
         prepareListData();
 

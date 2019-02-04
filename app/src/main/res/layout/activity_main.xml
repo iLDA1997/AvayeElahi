@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#f6f6f6"
     android:orientation="vertical"
 
     tools:context=".Activity.MainActivity">
@@ -35,12 +35,13 @@
                 android:layout_weight="1"
                 android:gravity="center_vertical"
                 android:text="@string/app_name_fa"
+                android:textStyle="bold"
                 android:textColor="@color/textTitleColor"
                 android:textSize="@dimen/toolbarTitleSize" />
 
             <ImageView
-                android:layout_width="45dp"
-                android:layout_height="45dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="5dp"
                 android:src="@drawable/ic_launcher" />
@@ -55,13 +56,16 @@
         android:layout_height="0dp" />
 
     <ScrollView
+        android:id="@+id/main_scroll"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar_main"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="0dp">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#f6f6f6"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="15dp">
 
@@ -82,13 +86,15 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="1397/08/18" />
+                        android:gravity="left"
+                        android:text="1397/08/18"
+                        android:textSize="16sp"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
                         android:text="@string/main_date_shamshi" />
 
                 </LinearLayout>
@@ -96,8 +102,8 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginVertical="3dp"
                     android:layout_gravity="center"
+                    android:layout_marginVertical="3dp"
                     android:src="@drawable/list_divider_v" />
 
                 <LinearLayout
@@ -115,8 +121,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
                         android:text="@string/main_date_miladi" />
 
                 </LinearLayout>
@@ -124,8 +130,8 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginVertical="3dp"
                     android:layout_gravity="center"
+                    android:layout_marginVertical="3dp"
                     android:src="@drawable/list_divider_v" />
 
                 <LinearLayout
@@ -143,8 +149,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
                         android:text="@string/main_date_ghamari" />
 
                 </LinearLayout>
@@ -168,13 +174,13 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="2"
                         android:gravity="center"
-                        android:text="05 : 38 : 12"/>
+                        android:text="02 : 34 : 11" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="@string/main_time_for_next_azan"/>
+                        android:text="@string/main_time_for_next_azan" />
 
                 </LinearLayout>
 
@@ -197,36 +203,36 @@
                         android:id="@+id/main_volume_1"
                         android:layout_width="35dp"
                         android:layout_height="35dp"
-                        android:src="@drawable/medium"/>
+                        android:src="@drawable/medium" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:layout_gravity="center_vertical"
-                        android:text="05 : 38 : 12"/>
+                        android:text="05 : 23" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:layout_marginRight="10dp"
                         android:layout_gravity="center_vertical"
-                        android:text="@string/main_azan_sobh"/>
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1"
+                        android:text="@string/main_azan_sobh" />
 
                     <ImageView
                         android:layout_width="40dp"
                         android:layout_height="40dp"
-                        android:src="@drawable/prayer_1"/>
+                        android:src="@drawable/prayer_1" />
 
                 </LinearLayout>
 
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginVertical="3dp"
                     android:layout_gravity="center"
+                    android:layout_marginVertical="3dp"
                     android:src="@drawable/list_divider_v" />
 
                 <LinearLayout
@@ -238,36 +244,36 @@
                         android:id="@+id/main_volume_2"
                         android:layout_width="35dp"
                         android:layout_height="35dp"
-                        android:src="@drawable/medium"/>
+                        android:src="@drawable/medium" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:layout_gravity="center_vertical"
-                        android:text="05 : 38 : 12"/>
+                        android:text="06 : 54" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:layout_marginRight="10dp"
                         android:layout_gravity="center_vertical"
-                        android:text="@string/main_tolu"/>
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1"
+                        android:text="@string/main_tolu" />
 
                     <ImageView
                         android:layout_width="40dp"
                         android:layout_height="40dp"
-                        android:src="@drawable/prayer_2"/>
+                        android:src="@drawable/prayer_2" />
 
                 </LinearLayout>
 
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginVertical="3dp"
                     android:layout_gravity="center"
+                    android:layout_marginVertical="3dp"
                     android:src="@drawable/list_divider_v" />
 
                 <LinearLayout
@@ -279,36 +285,36 @@
                         android:id="@+id/main_volume_3"
                         android:layout_width="35dp"
                         android:layout_height="35dp"
-                        android:src="@drawable/medium"/>
+                        android:src="@drawable/medium" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:layout_gravity="center_vertical"
-                        android:text="05 : 38 : 12"/>
+                        android:text="11 : 41" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:layout_marginRight="10dp"
                         android:layout_gravity="center_vertical"
-                        android:text="@string/main_azan_zhohr"/>
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1"
+                        android:text="@string/main_azan_zhohr" />
 
                     <ImageView
                         android:layout_width="40dp"
                         android:layout_height="40dp"
-                        android:src="@drawable/prayer_3"/>
+                        android:src="@drawable/prayer_3" />
 
                 </LinearLayout>
 
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginVertical="3dp"
                     android:layout_gravity="center"
+                    android:layout_marginVertical="3dp"
                     android:src="@drawable/list_divider_v" />
 
                 <LinearLayout
@@ -328,7 +334,7 @@
                         android:layout_gravity="center_vertical"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="05 : 38 : 12" />
+                        android:text="14 : 14" />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -348,8 +354,8 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginVertical="3dp"
                     android:layout_gravity="center"
+                    android:layout_marginVertical="3dp"
                     android:src="@drawable/list_divider_v" />
 
                 <LinearLayout
@@ -361,36 +367,36 @@
                         android:id="@+id/main_volume_5"
                         android:layout_width="35dp"
                         android:layout_height="35dp"
-                        android:src="@drawable/medium"/>
+                        android:src="@drawable/medium" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:layout_gravity="center_vertical"
-                        android:text="05 : 38 : 12"/>
+                        android:text="16 : 53" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:layout_marginRight="10dp"
                         android:layout_gravity="center_vertical"
-                        android:text="@string/main_azan_maghreb"/>
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1"
+                        android:text="@string/main_azan_maghreb" />
 
                     <ImageView
                         android:layout_width="40dp"
                         android:layout_height="40dp"
-                        android:src="@drawable/prayer_5"/>
+                        android:src="@drawable/prayer_5" />
 
                 </LinearLayout>
 
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginVertical="3dp"
                     android:layout_gravity="center"
+                    android:layout_marginVertical="3dp"
                     android:src="@drawable/list_divider_v" />
 
                 <LinearLayout
@@ -402,43 +408,66 @@
                         android:id="@+id/main_volume_6"
                         android:layout_width="35dp"
                         android:layout_height="35dp"
-                        android:src="@drawable/medium"/>
+                        android:src="@drawable/medium" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:layout_gravity="center_vertical"
-                        android:text="05 : 38 : 12"/>
+                        android:text="17 : 44" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:layout_marginRight="10dp"
                         android:layout_gravity="center_vertical"
-                        android:text="@string/main_azan_eshaa"/>
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1"
+                        android:text="@string/main_azan_eshaa" />
 
                     <ImageView
                         android:layout_width="40dp"
                         android:layout_height="40dp"
-                        android:src="@drawable/prayer_6"/>
+                        android:src="@drawable/prayer_6" />
 
                 </LinearLayout>
 
 
             </LinearLayout>
 
-            <Button
-                android:id="@+id/holidays"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/holidays" />
-
         </LinearLayout>
 
     </ScrollView>
 
-</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#dedede"
+            android:text="🌏 بندرترکمن" />
+
+        <ImageView
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#c3c3c3"/>
+
+        <Button
+            android:id="@+id/holidays"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#dedede"
+            android:text="@string/holidays" />
+
+    </LinearLayout>
+
+</RelativeLayout>
 

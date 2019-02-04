@@ -4,6 +4,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
+import android.provider.Settings;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -25,10 +26,19 @@ import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 import com.noobs_team.avayeelahi.R;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import ir.mirrajabi.persiancalendar.PersianCalendarView;
 import ir.mirrajabi.persiancalendar.core.PersianCalendarHandler;
 import ir.mirrajabi.persiancalendar.core.models.PersianDate;
-import com.noobs_team.avayeelahi.Time.PrayTime;
+
+import com.noobs_team.avayeelahi.Utils.DateConverterUtil;
+
+import org.joda.time.Chronology;
+import org.joda.time.LocalDate;
+import org.joda.time.chrono.ISOChronology;
+import org.joda.time.chrono.IslamicChronology;
 
 import static android.provider.ContactsContract.Directory.PACKAGE_NAME;
 
@@ -42,8 +52,6 @@ public class MainActivity extends AppCompatActivity {
     AccountHeader headerResult;
     TextView mainMenuHeaderToday, todayShamsi, todayMiladi, todayJalali;
     PersianCalendarHandler calendar;
-    //PrayTime jDate;
-    //PersianDate date;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,8 +83,6 @@ public class MainActivity extends AppCompatActivity {
         volume5.setOnClickListener(mainOnClick);
         volume6.setOnClickListener(mainOnClick);
 
-        //todayJalali.setText((int) jTime);
-
         calendar = persianCalendarView.getCalendar();
         PersianDate today = calendar.getToday();
         String dayAndMonth = calendar.getWeekDayName(today)
@@ -84,7 +90,31 @@ public class MainActivity extends AppCompatActivity {
                 + " " + calendar.getMonthName(today)
                 + " " + calendar.formatNumber(today.getYear());
         mainMenuHeaderToday.setText(dayAndMonth);
-    }
+
+        //show julian date
+        todayShamsi.setText(calendar.formatNumber(today.getYear())
+                + " - " + calendar.formatNumber(today.getMonth())
+                + " - " + calendar.formatNumber(today.getDayOfMonth()));
+
+        //show gregorian date
+        SimpleDateFormat miladiDate = new SimpleDateFormat("yyyy-MM-dd");
+        todayMiladi.setText(miladiDate.format(new Date()));
+
+        //show hijri date
+        DateConverterUtil converter = new DateConverterUtil();
+        converter.persianToGregorian(today.getYear(), today.getMonth(), today.getDayOfMonth());
+        int year  = converter.getYear();
+        int month = converter.getMonth();
+        int day   = converter.getDay();
+
+        Chronology iso = ISOChronology.getInstanceUTC();
+        Chronology hijri = IslamicChronology.getInstanceUTC();
+
+        LocalDate todayIso = new LocalDate(converter.getYear(),
+                converter.getMonth(), converter.getDay(), iso);
+        LocalDate todayHijri = new LocalDate(todayIso.toDateTimeAtStartOfDay(), hijri);
+        todayJalali.setText(String.valueOf(todayHijri));
+        }
 
     private void setupDrawer(MainActivity mainActivity) {
 
@@ -195,7 +225,6 @@ public class MainActivity extends AppCompatActivity {
                 settingsItem,
                 aboutUsItem
                 //linkProgramItem
-
         )
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
                     @Override
@@ -203,22 +232,30 @@ public class MainActivity extends AppCompatActivity {
                         if (drawerItem != null) {
                             Intent intent = null;
                             if (drawerItem.getIdentifier() == 10) {
-                                intent = new Intent(MainActivity.this, AboutUsActivity.class);
+                                intent = new Intent
+                                        (MainActivity.this, AboutUsActivity.class);
                             } else if (drawerItem.getIdentifier() == 7) {
-                                intent = new Intent(MainActivity.this, CompassActivity.class);
+                                intent = new Intent
+                                        (MainActivity.this, CompassActivity.class);
                             } else if (drawerItem.getIdentifier() == 6) {
-                                intent = new Intent(MainActivity.this, ZekrShomarActivity.class);
+                                intent = new Intent
+                                        (MainActivity.this, ZekrShomarActivity.class);
                             } else if (drawerItem.getIdentifier() == 5) {
-                                intent = new Intent(MainActivity.this, TasbihActivity.class);
+                                intent = new Intent
+                                        (MainActivity.this, TasbihActivity.class);
                             } else if (drawerItem.getIdentifier() == 9) {
-                                intent = new Intent(MainActivity.this, ChangeDateActivity.class);
+                                intent = new Intent
+                                        (MainActivity.this, ChangeDateActivity.class);
                             } else if (drawerItem.getIdentifier() == 2) {
-                                intent = new Intent(MainActivity.this, AsmaAllahActivity.class);
+                                intent = new Intent
+                                        (MainActivity.this, AsmaAllahActivity.class);
                             } else if (drawerItem.getIdentifier() == 4) {
-                                intent = new Intent(MainActivity.this, AzkarRouzanehActivity.class);
-                            }
-
-                            if (intent != null) {
+                                intent = new Intent
+                                        (MainActivity.this, AzkarRouzanehActivity.class);
+                            } else if (drawerItem.getIdentifier() == 8) {
+                                intent = new Intent
+                                        (MainActivity.this, SettingActivity.class);
+                            } if (intent != null) {
                                 MainActivity.this.startActivity(intent);
                             }
                             return false;
@@ -236,7 +273,7 @@ public class MainActivity extends AppCompatActivity {
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(MainActivity.this);
 
         alertDialogBuilder.setTitle(R.string.app_name_fa);
-        alertDialogBuilder.setIcon(R.mipmap.ic_launcher_round);
+        alertDialogBuilder.setIcon(R.drawable.ic_launcher);
 
         alertDialogBuilder
                 .setMessage(R.string.dialog_message)

@@ -41,7 +41,8 @@
             android:parentActivityName=".Activity.MainActivity" />
         <activity
             android:name=".Activity.ChangeDateActivity"
-            android:parentActivityName=".Activity.MainActivity" />
+            android:parentActivityName=".Activity.MainActivity"
+            android:windowSoftInputMode="stateHidden" />
         <activity
             android:name=".Activity.HolidaysActivity"
             android:parentActivityName=".Activity.MainActivity" />
@@ -51,8 +52,10 @@
         <activity
             android:name=".Activity.AzkarRouzanehActivity"
             android:parentActivityName=".Activity.MainActivity" />
+        <activity android:name=".Activity.CalendarActivity" />
+        <activity android:name=".Activity.SettingActivity"
+            android:parentActivityName=".Activity.MainActivity"/>
 
-        <activity android:name=".Activity.CalendarActivity"/>
     </application>
 
 </manifest>

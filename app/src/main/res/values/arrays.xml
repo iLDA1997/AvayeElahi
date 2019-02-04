@@ -22,7 +22,7 @@
         <item>#dddddd</item>
     </string-array>
 
-    <string-array name="spinner_month">
+    <string-array name="spinner_month_shamsi">
 
         <item>01/فروردین</item>
         <item>02/اردیبهشت</item>
@@ -36,6 +36,23 @@
         <item>10/دی</item>
         <item>11/بهمن</item>
         <item>12/اسفند</item>
+
+    </string-array>
+
+    <string-array name="spinner_month_gregorian">
+
+        <item>January/01</item>
+        <item>February/02</item>
+        <item>March/03</item>
+        <item>April/04</item>
+        <item>May/05</item>
+        <item>June/06</item>
+        <item>July/07</item>
+        <item>August/08</item>
+        <item>September/09</item>
+        <item>October/10</item>
+        <item>November/11</item>
+        <item>December/12</item>
 
     </string-array>
 
