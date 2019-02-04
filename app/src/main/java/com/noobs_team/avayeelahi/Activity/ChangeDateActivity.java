@@ -11,6 +11,8 @@ import com.noobs_team.avayeelahi.Fragments.FragmentShamsi;
 import com.noobs_team.avayeelahi.R;
 import com.noobs_team.avayeelahi.Utils.TabLayoutUtil;
 
+import java.util.Objects;
+
 public class ChangeDateActivity extends AppCompatActivity {
     ViewPager viewPager;
     android.support.v7.widget.Toolbar toolbarChangeDate;
@@ -27,7 +29,7 @@ public class ChangeDateActivity extends AppCompatActivity {
         tabLayout = findViewById(R.id.tabs_change_date);
         toolbarChangeDate.setTitle(R.string.menu_change_date);
         setSupportActionBar(toolbarChangeDate);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         toolbarChangeDate.setTitleTextColor(getResources().getColor(R.color.textTitleColor));
         setViewPager(viewPager);
         tabLayout.setupWithViewPager(viewPager);

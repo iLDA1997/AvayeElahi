@@ -14,6 +14,8 @@ import com.noobs_team.avayeelahi.R;
 import com.noobs_team.avayeelahi.Utils.CityDatabase;
 import com.noobs_team.avayeelahi.Utils.CustomDialog;
 
+import java.util.Objects;
+
 
 public class SettingActivity extends AppCompatActivity {
 
@@ -28,7 +30,7 @@ public class SettingActivity extends AppCompatActivity {
         setContentView(R.layout.activity_setting);
         toolbarSetting = findViewById(R.id.toolbar_setting);
         setSupportActionBar(toolbarSetting);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
 
         settingDefault = findViewById(R.id.setting_default);
         settingAlertAndAzan = findViewById(R.id.setting_alert_and_azan);

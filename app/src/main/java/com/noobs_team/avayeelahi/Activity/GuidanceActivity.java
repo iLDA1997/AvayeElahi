@@ -5,6 +5,8 @@ import android.os.Bundle;
 
 import com.noobs_team.avayeelahi.R;
 
+import java.util.Objects;
+
 public class GuidanceActivity extends AppCompatActivity {
     android.support.v7.widget.Toolbar toolbarGuidence;
 
@@ -16,7 +18,7 @@ public class GuidanceActivity extends AppCompatActivity {
         toolbarGuidence = findViewById(R.id.toolbar_guidence);
         toolbarGuidence.setTitle(R.string.app_activity_guide_compass);
         setSupportActionBar(toolbarGuidence);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         toolbarGuidence.setTitleTextColor(getResources().getColor(R.color.textTitleColor));
 
         //rahnamaye darbareh ma

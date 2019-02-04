@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/backgroundGuidance"
     tools:context=".Activity.ZekrShomarActivity">
 
     <com.blackgoblin.rtltoolbar.RtlToolbar
@@ -11,11 +12,12 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
-        android:elevation="15dp">
+        android:elevation="15dp"
+        tools:ignore="MissingConstraints">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
@@ -40,100 +42,111 @@
 
     </com.blackgoblin.rtltoolbar.RtlToolbar>
 
-    <FrameLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="?attr/actionBarSize">
+        android:orientation="vertical"
+        android:layout_below="@id/toolbar_zekr_shomar">
 
         <LinearLayout
+            android:id="@+id/bg_layout_sobhan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginRight="30dp">
+            android:padding="10dp"
+            android:background="@drawable/border_zekr_shomar"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/zekr_top_text"
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/top_text_zekr"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/zekr_top_text"
-                android:textSize="22sp" />
-
-            <TextView
-                android:id="@+id/top_text_zekr2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="0"
-                android:textSize="22sp" />
+                android:textSize="16sp" />
 
         </LinearLayout>
 
-        <devlight.io.library.ArcProgressStackView
-            android:id="@+id/apsv_zekr"
-            android:layout_width="240dp"
-            android:layout_height="240dp"
-            android:layout_gravity="center"
-            app:apsv_animated="true"
-            app:apsv_dragged="false"
-            app:apsv_draw_width="15%"
-            app:apsv_indicator_orientation="horizontal"
-            app:apsv_leveled="false"
-            app:apsv_model_bg_enabled="true"
-            app:apsv_model_offset="0dp"
-            app:apsv_preview_colors="@array/polluted_waves"
-            app:apsv_rounded="true"
-            app:apsv_shadowed="false"
-            app:apsv_start_angle="270"
-            app:apsv_sweep_angle="360"
-            app:apsv_text_color="#00000000" />
-
-        <Button
-            android:id="@+id/btn_zekr_counter"
-            style="@style/Base.DialogWindowTitleBackground.AppCompat"
-            android:layout_width="250dp"
-            android:layout_height="250dp"
-            android:layout_gravity="center"
-            android:text="@string/zekr_btn_counter"
-            android:textStyle="bold"
-            android:textSize="30sp" />
-
-        <LinearLayout
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginBottom="35dp">
+            android:layout_marginTop="80dp">
+
+            <devlight.io.library.ArcProgressStackView
+                android:id="@+id/apsv_zekr"
+                android:layout_width="240dp"
+                android:layout_height="240dp"
+                android:layout_gravity="center"
+                app:apsv_animated="true"
+                app:apsv_dragged="false"
+                app:apsv_draw_width="15%"
+                app:apsv_indicator_orientation="horizontal"
+                app:apsv_leveled="false"
+                app:apsv_model_bg_enabled="true"
+                app:apsv_model_offset="0dp"
+                app:apsv_preview_colors="@array/polluted_waves"
+                app:apsv_rounded="true"
+                app:apsv_shadowed="false"
+                app:apsv_start_angle="270"
+                app:apsv_sweep_angle="360"
+                app:apsv_text_color="#00000000" />
 
             <Button
-                android:id="@+id/btn_zekr_volume"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:id="@+id/btn_zekr_counter"
+                style="@style/Base.DialogWindowTitleBackground.AppCompat"
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:layout_gravity="center"
+                android:text="@string/zekr_btn_counter"
+                android:textStyle="bold"
+                android:textSize="30sp" />
 
-                android:text="@string/zekr_btn_volume_on"
-                tools:ignore="ButtonStyle" />
+        </FrameLayout>
 
-            <Button
-                android:id="@+id/btn_zekr_refresh"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/zekr_btn_refresh"
-                tools:ignore="ButtonStyle" />
+    </LinearLayout>
 
-            <Button
-                android:id="@+id/btn_zekr_mines"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/zekr_btn_mines"
-                tools:ignore="ButtonStyle" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="20dp"
+        android:layout_alignParentBottom="true">
 
-        </LinearLayout>
+        <Button
+            android:id="@+id/btn_zekr_volume"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
 
-    </FrameLayout>
+            android:text="@string/zekr_btn_volume_on"
+            tools:ignore="ButtonStyle" />
 
-</android.support.constraint.ConstraintLayout>
+        <Button
+            android:id="@+id/btn_zekr_refresh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/zekr_btn_refresh"
+            tools:ignore="ButtonStyle" />
+
+        <Button
+            android:id="@+id/btn_zekr_mines"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/zekr_btn_mines"
+            tools:ignore="ButtonStyle" />
+
+    </LinearLayout>
+
+</RelativeLayout>

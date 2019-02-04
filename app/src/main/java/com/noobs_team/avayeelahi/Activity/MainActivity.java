@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
     AccountHeader headerResult;
     TextView mainMenuHeaderToday, todayShamsi, todayMiladi, todayJalali;
     PersianCalendarHandler calendar;
+    Drawer result;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -103,9 +104,9 @@ public class MainActivity extends AppCompatActivity {
         //show hijri date
         DateConverterUtil converter = new DateConverterUtil();
         converter.persianToGregorian(today.getYear(), today.getMonth(), today.getDayOfMonth());
-        int year  = converter.getYear();
+        int year = converter.getYear();
         int month = converter.getMonth();
-        int day   = converter.getDay();
+        int day = converter.getDay();
 
         Chronology iso = ISOChronology.getInstanceUTC();
         Chronology hijri = IslamicChronology.getInstanceUTC();
@@ -114,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
                 converter.getMonth(), converter.getDay(), iso);
         LocalDate todayHijri = new LocalDate(todayIso.toDateTimeAtStartOfDay(), hijri);
         todayJalali.setText(String.valueOf(todayHijri));
-        }
+    }
 
     private void setupDrawer(MainActivity mainActivity) {
 
@@ -122,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
                 .withActivity(this)
                 .withHeaderBackground(R.color.accountHeaderColor)
                 .withDividerBelowHeader(true)
-                .addProfiles( new ProfileDrawerItem()
+                .addProfiles(new ProfileDrawerItem()
                         .withIcon(R.drawable.ic_launcher))
                 .withSelectionListEnabled(false)
                 .withProfileImagesClickable(false)
@@ -209,23 +210,23 @@ public class MainActivity extends AppCompatActivity {
                 .withName(R.string.menu_send_program);*/
 
         final DrawerBuilder drawerBuilder = new DrawerBuilder()
-        .withActivity(mainActivity)
-        .withToolbar(this.toolbarMain)
-        .withAccountHeader(headerResult)
-        .withDrawerGravity(Gravity.RIGHT)
-        .addDrawerItems(
+                .withActivity(mainActivity)
+                .withToolbar(this.toolbarMain)
+                .withAccountHeader(headerResult)
+                .withDrawerGravity(Gravity.RIGHT)
+                .addDrawerItems(
 
-                homeItem,
-                new DividerDrawerItem(),
-                asmaKhodaItem,
-                jabehAbzarItem,
-                compassItem,
-                changeDateItem,
-                new DividerDrawerItem(),
-                settingsItem,
-                aboutUsItem
-                //linkProgramItem
-        )
+                        homeItem,
+                        new DividerDrawerItem(),
+                        asmaKhodaItem,
+                        jabehAbzarItem,
+                        compassItem,
+                        changeDateItem,
+                        new DividerDrawerItem(),
+                        settingsItem,
+                        aboutUsItem
+                        //linkProgramItem
+                )
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
                     @Override
                     public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
@@ -255,7 +256,8 @@ public class MainActivity extends AppCompatActivity {
                             } else if (drawerItem.getIdentifier() == 8) {
                                 intent = new Intent
                                         (MainActivity.this, SettingActivity.class);
-                            } if (intent != null) {
+                            }
+                            if (intent != null) {
                                 MainActivity.this.startActivity(intent);
                             }
                             return false;
@@ -265,40 +267,44 @@ public class MainActivity extends AppCompatActivity {
                 })
                 .withActionBarDrawerToggleAnimated(true);
 
-        Drawer result = drawerBuilder.build();
+        result = drawerBuilder.build();
     }
 
     @Override
     public void onBackPressed() {
-        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(MainActivity.this);
+        if (result.isDrawerOpen()) {
+            result.closeDrawer();
+        } else {
+            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(MainActivity.this);
 
-        alertDialogBuilder.setTitle(R.string.app_name_fa);
-        alertDialogBuilder.setIcon(R.drawable.ic_launcher);
+            alertDialogBuilder.setTitle(R.string.app_name_fa);
+            alertDialogBuilder.setIcon(R.drawable.ic_launcher);
 
-        alertDialogBuilder
-                .setMessage(R.string.dialog_message)
-                .setCancelable(true)
-                .setPositiveButton(R.string.dialog_yes, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        System.exit(0);
-                    }
-                })
-                .setNegativeButton(R.string.dialog_no, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        dialog.cancel();
-                    }
-                })
-                .setNeutralButton(R.string.dialog_comment, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        Intent intent = new Intent(Intent.ACTION_EDIT);
-                        intent.setData(Uri.parse("bazaar://details?id=" + PACKAGE_NAME));
-                        intent.setPackage("com.farsitel.bazaar");
-                        startActivity(intent);
-                    }
-                });
+            alertDialogBuilder
+                    .setMessage(R.string.dialog_message)
+                    .setCancelable(true)
+                    .setPositiveButton(R.string.dialog_yes, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            System.exit(0);
+                        }
+                    })
+                    .setNegativeButton(R.string.dialog_no, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            dialog.cancel();
+                        }
+                    })
+                    .setNeutralButton(R.string.dialog_comment, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            Intent intent = new Intent(Intent.ACTION_EDIT);
+                            intent.setData(Uri.parse("bazaar://details?id=" + PACKAGE_NAME));
+                            intent.setPackage("com.farsitel.bazaar");
+                            startActivity(intent);
+                        }
+                    });
 
-        AlertDialog alertDialog = alertDialogBuilder.create();
-        alertDialog.show();
+            AlertDialog alertDialog = alertDialogBuilder.create();
+            alertDialog.show();
+        }
     }
 
     private View.OnClickListener mainOnClick = new View.OnClickListener() {

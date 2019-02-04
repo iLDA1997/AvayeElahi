@@ -7,6 +7,8 @@ import android.widget.Toast;
 
 import com.noobs_team.avayeelahi.R;
 
+import java.util.Objects;
+
 public class AlertAndAzan extends AppCompatActivity {
 
     Toolbar toolbarAlertAndAzan;
@@ -18,7 +20,7 @@ public class AlertAndAzan extends AppCompatActivity {
 
         toolbarAlertAndAzan = findViewById(R.id.toolbar_alert_and_azan);
         setSupportActionBar(toolbarAlertAndAzan);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
 
     }
 

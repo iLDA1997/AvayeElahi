@@ -18,14 +18,14 @@ import android.widget.Toast;
 
 import com.noobs_team.avayeelahi.R;
 
+import java.util.Objects;
+
 import static com.noobs_team.avayeelahi.R.string.compass_top_text;
 
 public class CompassActivity extends AppCompatActivity implements SensorEventListener {
     private ImageView compassImage;
     private TextView poleView;
-    private TextView poleDirection;
     private TextView degreeVeiw;
-    private TextView degree;
     private SensorManager directionSensor;
     private float currentDegree = 0f;
 
@@ -39,11 +39,11 @@ public class CompassActivity extends AppCompatActivity implements SensorEventLis
         toolbarCompass = findViewById(R.id.toolbar_compass);
         toolbarCompass.setTitle(R.string.app_activity_compass);
         setSupportActionBar(toolbarCompass);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         toolbarCompass.setTitleTextColor(getResources().getColor(R.color.textTitleColor));
 
-        poleDirection = findViewById(R.id.poleDirection);
-        degree = findViewById(R.id.degree);
+        TextView poleDirection = findViewById(R.id.poleDirection);
+        TextView degree = findViewById(R.id.degree);
         //Setting compass image
         compassImage = (ImageView) findViewById(R.id.compassImageView);
         //setting a pole textview

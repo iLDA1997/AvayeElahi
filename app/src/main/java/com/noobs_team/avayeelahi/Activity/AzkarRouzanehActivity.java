@@ -16,6 +16,7 @@ import com.noobs_team.avayeelahi.R;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Objects;
 
 public class AzkarRouzanehActivity extends AppCompatActivity {
 
@@ -34,7 +35,7 @@ public class AzkarRouzanehActivity extends AppCompatActivity {
         toolbarAzkarRouzaneh = findViewById(R.id.toolbar_azkar_rouzaneh);
         toolbarAzkarRouzaneh.setTitle(R.string.app_activity_azkar_rouzaneh);
         setSupportActionBar(toolbarAzkarRouzaneh);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         toolbarAzkarRouzaneh.setTitleTextColor(getResources().getColor(R.color.textTitleColor));
         fingerTap = findViewById(R.id.finger_tap);
 

@@ -10,6 +10,7 @@ import com.noobs_team.avayeelahi.R;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class HolidaysActivity extends AppCompatActivity {
 
@@ -25,7 +26,7 @@ public class HolidaysActivity extends AppCompatActivity {
         toolbarHoliday = findViewById(R.id.toolbar_holiday);
         toolbarHoliday.setTitle(R.string.app_activity_holidays);
         setSupportActionBar(toolbarHoliday);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         toolbarHoliday.setTitleTextColor(getResources().getColor(R.color.textTitleColor));
 
 

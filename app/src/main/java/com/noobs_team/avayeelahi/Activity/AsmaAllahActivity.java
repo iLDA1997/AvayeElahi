@@ -13,6 +13,7 @@ import com.noobs_team.avayeelahi.R;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class AsmaAllahActivity extends AppCompatActivity {
 
@@ -28,7 +29,7 @@ public class AsmaAllahActivity extends AppCompatActivity {
         toolbarAsmaAllah = findViewById(R.id.toolbar_asma_allah);
         toolbarAsmaAllah.setTitle(R.string.app_activity_asma_allah);
         setSupportActionBar(toolbarAsmaAllah);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         toolbarAsmaAllah.setTitleTextColor(getResources().getColor(R.color.textTitleColor));
         asmaAllahListView = (ListView) findViewById(R.id.asma_allah_list);
         asmaAllah = new ArrayList<>();

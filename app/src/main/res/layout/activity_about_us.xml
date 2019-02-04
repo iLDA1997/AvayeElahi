@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/backgroundGuidance"
     android:orientation="vertical"
     tools:context=".Activity.AboutUsActivity">
 
@@ -45,7 +46,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/toolbar_about_us"
-        android:background="@color/md_blue_400"
         android:orientation="vertical">
 
         <ImageView
@@ -131,7 +131,6 @@
                         android:gravity="center_vertical"
                         android:padding="10dp"
                         android:text="@string/about_us_telegram"
-                        android:textColor="@color/md_white_1000"
                         android:textStyle="bold" />
 
                 </LinearLayout>
@@ -182,7 +181,6 @@
                         android:gravity="center_vertical"
                         android:padding="10dp"
                         android:text="@string/about_us_email"
-                        android:textColor="@color/md_white_1000"
                         android:textStyle="bold" />
 
                 </LinearLayout>
@@ -232,7 +230,6 @@
                         android:gravity="center_vertical"
                         android:padding="10dp"
                         android:text="@string/about_us_nazar"
-                        android:textColor="@color/md_white_1000"
                         android:textStyle="bold" />
 
                 </LinearLayout>
@@ -253,17 +250,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="#74b8fe"
+        android:background="@color/colorPrimary"
         android:gravity="center"
         android:padding="10dp"
         android:text="@string/about_us_bottum_message"
-        android:textColor="#000000" />
+        android:textColor="@color/textTitleColor" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="1dp"
+        android:layout_height="0.8dp"
         android:layout_alignTop="@id/bottom_tv_about_us"
-        android:background="#74ffffff"
+        android:background="#CDFFFFFF"
         android:orientation="vertical">
 
     </LinearLayout>
