@@ -1,6 +1,7 @@
 package com.noobs_team.avayeelahi.Activity;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -12,6 +13,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.noobs_team.avayeelahi.R;
+
+import java.util.function.ToDoubleBiFunction;
 
 import ir.mirrajabi.persiancalendar.PersianCalendarView;
 import ir.mirrajabi.persiancalendar.core.PersianCalendarHandler;
@@ -64,11 +67,10 @@ public class CalendarActivity extends AppCompatActivity {
         calendarDayAndMonth.setText(dayAndMonth);
         calendarYear.setText(calendar.formatNumber(today.getYear()));
 
-        if (calendar.getAllEventsForDay(today).isEmpty()){
+        if (calendar.getAllEventsForDay(today).isEmpty()) {
             eventText.setText(getResources().getString(R.string.calendar_non_event));
-        }
-        else {
-            for(CalendarEvent event : calendar.getAllEventsForDay(today))
+        } else {
+            for (CalendarEvent event : calendar.getAllEventsForDay(today))
                 eventText.setText(event.getTitle());
         }
 
@@ -81,11 +83,10 @@ public class CalendarActivity extends AppCompatActivity {
                                 calendar.formatNumber(calendar.getMonthName(date)) + " "));
                 calendarYear.setText(calendar.formatNumber(date.getYear()));
 
-                if (calendar.getAllEventsForDay(today).size()==0){
+                if (calendar.getAllEventsForDay(today).size() == 0) {
                     eventText.setText(getResources().getString(R.string.calendar_non_event));
-                }
-                else {
-                    for(CalendarEvent event : calendar.getAllEventsForDay(date))
+                } else {
+                    for (CalendarEvent event : calendar.getAllEventsForDay(date))
                         eventText.setText(event.getTitle());
                 }
             }
@@ -94,11 +95,10 @@ public class CalendarActivity extends AppCompatActivity {
         persianCalendarView.setOnDayClickedListener(new OnDayClickedListener() {
             @Override
             public void onClick(PersianDate date) {
-                if (calendar.getAllEventsForDay(date).size()==0){
+                if (calendar.getAllEventsForDay(date).size() == 0) {
                     eventText.setText(getResources().getString(R.string.calendar_non_event));
-                }
-                else {
-                    for(CalendarEvent event : calendar.getAllEventsForDay(date))
+                } else {
+                    for (CalendarEvent event : calendar.getAllEventsForDay(date))
                         eventText.setText(event.getTitle());
                 }
                 dayAndMonth = calendar.getWeekDayName(date)
@@ -116,22 +116,13 @@ public class CalendarActivity extends AppCompatActivity {
         public void onClick(View v) {
             if (v.getId() == R.id.calendar_come_back) {
                 persianCalendarView.goToToday();
-                calendarDayAndMonth.setText(dayAndMonth);
-                calendarYear.setText(calendar.formatNumber(today.getYear()));
-
-                if (calendar.getAllEventsForDay(today).size()==0){
-                    eventText.setText(getResources().getString(R.string.calendar_non_event));
-                }
-                else {
-                    for(CalendarEvent event : calendar.getAllEventsForDay(today))
-                        eventText.setText(event.getTitle());
-                }
+                TodayChanges();
             }
             if (v.getId() == R.id.calendar_top_button_mahaneh) {
 
             }
             if (v.getId() == R.id.calendar_top_button_rouzaneh) {
-                Toast.makeText(getBaseContext(),"به زودی...!",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getBaseContext(), "به زودی...!", Toast.LENGTH_SHORT).show();
             }
             if (v.getId() == R.id.back_calendar) {
                 persianCalendarView.goToPreviousMonth();
@@ -142,4 +133,19 @@ public class CalendarActivity extends AppCompatActivity {
 
         }
     };
+
+    private void TodayChanges(){
+        dayAndMonth = calendar.getWeekDayName(today)
+                + " " + calendar.formatNumber(today.getDayOfMonth())
+                + " " + calendar.getMonthName(today) + " ";
+        calendarDayAndMonth.setText(dayAndMonth);
+        calendarYear.setText(calendar.formatNumber(today.getYear()));
+
+        if (calendar.getAllEventsForDay(today).size() == 0) {
+            eventText.setText(getResources().getString(R.string.calendar_non_event));
+        } else {
+            for (CalendarEvent event : calendar.getAllEventsForDay(today))
+                eventText.setText(event.getTitle());
+        }
+    }
 }

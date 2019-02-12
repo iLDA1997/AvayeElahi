@@ -43,4 +43,5 @@ dependencies {
     }
     implementation 'com.github.roojin:persian-calendar-view:1.2.2'
     implementation 'joda-time:joda-time:2.10.1'
+    implementation 'com.github.marcinmoskala:ArcSeekBar:0.31'
 }
