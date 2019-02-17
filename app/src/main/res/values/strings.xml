@@ -192,7 +192,13 @@
     <string name="setting_show_notification">نمایش اعلان</string>
     <string name="setting_alert_and_azan">مدیریت اذان و هشدار ها</string>
     <string name="setting_prayer_one">تنظیمات اذان صبح</string>
-    <string name="setting_play_alert">پخش هشدار</string>
+    <string name="setting_prayer_two">تنظیمات طلوع افتاب</string>
+    <string name="setting_prayer_three">تنظیمات اذان ظهر</string>
+    <string name="setting_prayer_four">تنظیمات اذان عصر</string>
+    <string name="setting_prayer_five">تنظیمات اذان مغرب</string>
+    <string name="setting_prayer_six">تنظیمات اذان عشاء</string>
+    <string name="setting_play_alarm">پخش هشدار</string>
     <string name="setting_play_azan">پخش اذان</string>
+    <string name="setting_alarm_time">تعیین زمان هشدار</string>
 
 </resources>

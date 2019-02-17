@@ -87,7 +87,6 @@
             android:id="@+id/persian_calendar"
             android:layout_width="match_parent"
             android:layout_height="290dp"
-            android:layout_below="@id/persian_calendar"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
             android:layout_weight="1"
@@ -97,7 +96,7 @@
             app:pcv_colorHolidaySelected="#f1f2f3"
             app:pcv_colorNormalDay="#1d1d1d"
             app:pcv_colorNormalDaySelected="#f6f6f6"
-            app:pcv_eventUnderlineColor="#0dff00"
+            app:pcv_eventUnderlineColor="#00046A"
             app:pcv_fontSize="15sp"
             app:pcv_headersFontSize="15sp" />
 
@@ -130,8 +129,10 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:layout_marginVertical="5dp"
-            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
             android:orientation="vertical"
             android:background="@color/SpaceColor"/>
 
@@ -332,7 +333,8 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
             android:layout_marginTop="5dp"
             android:gravity="right"
             android:text="رویداد ها"
@@ -341,8 +343,10 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:layout_marginVertical="5dp"
-            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
             android:orientation="vertical"
             android:background="@color/SpaceColor"/>
 

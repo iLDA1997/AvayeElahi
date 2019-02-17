@@ -80,7 +80,7 @@ public class SettingActivity extends AppCompatActivity {
                 alert.showDialog(SettingActivity.this);
             }
             if (v.getId() == R.id.setting_alert_and_azan) {
-                Intent intent = new Intent(SettingActivity.this, AlertAndAzan.class);
+                Intent intent = new Intent(SettingActivity.this, AlarmAndAzan.class);
                 startActivity(intent);
             }
         }
